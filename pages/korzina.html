@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#FBF8EC]">
+
+  <script src="../js/main.js"></script>
+    
+     <header class="shadow-[2px_4px_8px_0px_#0000001A] z-1 fixed w-full bg-white">
+        <nav class="container mx-auto px-3 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-5 md:gap-2 flex-1">
+              <a href="/index.html" class="flex items-center gap-2">
+                <img src="../images/logo.png" alt="logo" class="w-full w-8 h-8 md:w-10 md:h-10">
+                <p class="hidden lg:block font-bold uppercase text-sm lg:text-base">Северяночка</p>
+              </a>
+          
+              <a href="/pages/category.html" class="hidden md:flex items-center gap-1 md:gap-2 bg-[#70C05B] px-3 md:px-5 py-4 md:py-4 rounded-md">
+                <img src="https://cdn0.iconfinder.com/data/icons/user-interface-151/24/List_menu_toggle-512.png" alt="menu" class="w-full w-5 h-5">
+                <p class="hidden lg:block text-white text-xs lg:text-sm font-medium">Каталог</p>
+              </a>
+          
+              <div class="flex items-center border border-[#70C05B] rounded-md max-w-[500px] md:max-w-[400px] lg:max-w-[340px] w-full xl:max-w-[560px]">
+                <input type="text" placeholder="Найти товар" class="px-4 w-full py-4 text-xs text-md ">
+                <button class="px-3">
+                  <img src="https://static.vecteezy.com/system/resources/thumbnails/009/652/218/small/magnifying-glass-icon-isolated-on-white-background-search-illustration-vector.jpg" alt="search" class=" w-[60px]">
+                </button>
+              </div>
+            </div>
+          
+            <div class="hidden md:flex items-center gap-3 md:gap-5 text-[10px] sm:text-xs md:text-sm ml-3">
+              <a href="/pages/izbrannoe.html" class="flex flex-col items-center">
+                <img src="https://www.freeiconspng.com/uploads/like-outline-icon-png-22.png" alt="favorites" class="w-full w-5 h-5 md:w-6 md:h-6">
+                <p>Избранное</p>
+              </a>
+          
+              <a href="/pages/vseproduct.html" class="flex flex-col items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/814/814987.png" alt="orders" class="w-full w-5 h-5 md:w-6 md:h-6">
+                <p>Заказы</p>
+              </a>
+          
+              <a href="../pages/korzina.html" class="flex flex-col items-center relative">
+                <img src="https://cdn-icons-png.flaticon.com/512/481/481384.png" alt="basket" class= "w-full w-5 h-5 md:w-6 md:h-6">
+                <p>Корзина</p>
+              </a>
+          
+              <div class="flex items-center gap-2">
+                <img src="../images/avatar.png" alt="Avatar" class="w-full w-6 h-6 md:w-8 md:h-8 rounded-full object-cover">
+                     
+                <select id="Алексей" class="hidden lg:block bg-transparent border-none text-gray-800 font-medium cursor-pointer">
+                  <option value="Алексей">Алексей</option>
+                  <option value="Иван">Иван</option>
+                  <option value="Мария">Мария</option>
+                  <option value="Выход">Выход</option>
+                </select>
+                </div>              
+            </div>
+          </nav>
+          
+    </header>
+
+
+    <main class="bg-[#FBF8EC]">
+      <section>
+        <div class="container mx-auto pt-[120px]">
+          <div class="flex items-center gap-[20px]">
+            <h1>Главная</h1>
+            <img class="w-[10px]" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJUAAACUCAMAAACtIJvYAAAAZlBMVEX///8AAADu7u7x8fHMzMz39/fq6upRUVEgICBNTU2JiYlBQUFEREQWFhba2tqCgoJ6eno1NTV0dHQbGxteXl5WVlYsLCxvb287OzvCwsIMDAxjY2PU1NSmpqZqamqdnZ2zs7OSkpLVOdzkAAACbklEQVR4nO2cXXOCMBBFAwiofFRrpdZibf//n+wwKKKQXPLCXWb2Pvtw5rCJIVlizMTU2+xcHC/J1N/PkfgnaFNd2SiPlFXQ5Z0Nc09yCnr5ZOO0qavgKSJsPZsSYqusXqEE2AqzIRTdVnwcg2Lb+hqHImMNKl3CQwzXVqpgR6MqCzsV7yE6qWi2XE+QaGvvpGLZ+nVTkbCijUisxF1ZLKzaOQxpWOVBJBa09UbBEmprhbBItmSW/ApNECRbZ7U1PSWgImGpLZ+oLZ9AW1sKltryCbQldJbn2Kq1tjyitnyitnyitryw1JYPltrywVJbPlhqywcL2SJhof0ttdXHkmnLerxJtoU2Kf8oWEu1pbXVy1JHIqfkl1pbJFvouEBt9QL/qi8ULGiL00mJbP1QqFAbxJpDBUZiUZKw3LZWHCh3c0ZRU6Ci0R7FLoeQAZWA+T1lQIW5G4pSVonEdQM0lcbzQ8HWqG8C1HiHcC8bhqmRXmo1NRaRpsCMrqa6QFO5mmoDR5+aukWmKfuHDG0+1FQbkaYiBKWmbokRVMYwhQpdZE3JNBXNDyVzlYBesSimJM5T8GX0KNEUY40eom+aGKZi8FWamroHmsoJUGpqapZpasOYPJGplLBpLdNUiqAkmkolmsrVVBuZNQXXUxJNUWoK7g4ToESagu99jNEXI1OZSFOMQrfcc9PlJHH0MUyZHYDaM6BQHw7FlAFLT4opk7hbLTmmwDUWHFOgrEim3LdFVCwoY+wHbDRTxjFdEU3ZL3VimjK2Trg1F8qYizxTTa4DqIKwyBvk1ZYAU02ebR0kmGpykWeqyaPfeZazmX8MRSY9cwBa8QAAAABJRU5ErkJggg==" alt="">
+            <h1 class="text-[#8F8F8F]">Корзина</h1>
+          </div>
+        </div>
+      </section>
+
+
+      <section>
+        <div class="container mx-auto py-[90px]">
+          <div>
+            <h1 class="font-bold text-[64px] text-[#414141]">Корзина</h1>
+          </div>
+
+
+              <div class="flex items-center gap-[90px] pt-[120px]">
+            <label class="gap-[20px] cursor-pointer select-none flex items-center"">
+              <input type="checkbox" class="w-[30px] h-[24px] bg-[#70C05B]">
+              <span class="font-bold">Выделить всё</span>
+            </label>
+            <h1 class="text-[#FF6633] font-bold">Удалить выбранные</h1>
+ </div>
+
+
+<div>
+   <div>
+           <div class="flex items-center justify-between bg-white w-[900px] h-[72px] rounded-lg p-4 mt-[100px] ">
+            <div class="flex items-center justify-between relative">
+              <label class="" for="">
+              <input type="checkbox" class="peer sr-only">
+              <div class="bg-green-300 peer-checked:bg-green-500"></div>
+
+    
+                <img class="w-[80px] h-[60px] cursor-pointer" src="../images/doruble.png" alt="">
+        
+              <input type="checkbox" class="absolute top-[-8px] left-1 w-[24px] h-[24px] bg-[#70C05B] cursor-pointer">
+            </label>
+
+            <div class="flex-1 ml-20">
+             <h2 class="text-sm font-semibold">Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+
+              <div class="flex items-center gap-[20px] pt-[10px]">
+                <p class="text-md font-bold">44,50
+₽</p>
+<p class="text-xs text-gray-500">за шт.</p>
+              </div>
+            </div>
+
+              <div class="flex items-center gap-[20px] ml-[30px] select-none bg-[#70C05B] text-white rounded-[8px] ">
+                <div class="flex items-center justify-center w-[100px] h-[40px] gap-[20px]">
+                  <button onclick="updateCount(-1)" class="  rounded  flex items-center justify-center text-xl font-bold">-</button>
+                <span id="countDisplay" class="text-lg">2</span>
+                <button onclick="updateCount (1)" class="  rounded  flex items-center justify-center text-xl font-bold">+</button>
+                </div>
+              </div>
+
+             <div class="ml-[60px]">
+               <p class="font-bold text-lg whitespace-nowrap ">89,00
+             </div>
+₽</p>
+              </div>
+            </div>
+              </div>
+
+
+      
+          <div class="flex items-center justify-between bg-white w-[900px] h-[90px] rounded-lg p-4 mt-[100px]">
+            <div class="flex items-center justify-between relative">
+              <label class="" for="">
+              <input type="checkbox" class="peer sr-only">
+              <div class="bg-green-300 peer-checked:bg-green-500"></div>
+
+              <img class="w-[80px] h-[60px] cursor-pointer" src="../images/doruble.png" alt="">
+              <input type="checkbox" class="absolute top-[-8px] left-1 w-[24px] h-[24px] bg-[#70C05B] cursor-pointer">
+            </label>
+
+            <div class="flex-1 ml-20">
+              <h2 class="text-sm font-semibold">Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+
+              <div class="flex items-center gap-[20px] pt-[10px]">
+                <p class="text-md font-bold">44,50
+₽</p>
+<p class="text-gray-500 text-sm">50,50
+₽</p>
+<p class="text-xs text-gray-500">за шт.</p>
+<span class="bg-[#FF6633] text-white text-xs px-2 py-[2px]">-10%</span>
+              </div>
+            </div>
+
+              <div class="flex items-center gap-[20px] ml-[30px] select-none bg-[#70C05B] text-white rounded-[8px] ">
+                <div class="flex items-center justify-center w-[100px] h-[40px] gap-[20px]">
+                  <button onclick="minus(this)" class="  rounded  flex items-center justify-center text-xl font-bold">-</button>
+                <span class="qty">2</span>
+                <button onclick="plus (this)" class="  rounded  flex items-center justify-center text-xl font-bold">+</button>
+                </div>
+              </div>
+
+              <div class="ml-[60px]">
+                <p class="font-bold text-lg whitespace-nowrap">89,00
+₽</p>
+<del class="text-[#8F8F8F]">89,00 ₽</del> 
+              </div>
+              </div>
+            </div>
+
+
+
+         
+        
+         <div class="flex items-center justify-between bg-white w-[900px] h-[90px] rounded-lg p-4 mt-[100px]">
+            <div class="flex items-center justify-between relative">
+              <label class="" for="">
+              <input type="checkbox" class="peer sr-only">
+              <div class="bg-green-300 peer-checked:bg-green-500"></div>
+
+              <img class="w-[80px] h-[60px] cursor-pointer" src="../images/doruble.png" alt="">
+              <input type="checkbox" class="absolute top-[-8px] left-1 w-[24px] h-[24px] bg-[#70C05B] cursor-pointer">
+            </label>
+
+            <div class="flex-1 ml-20">
+              <h2 class="text-sm font-semibold">Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+
+              <div class="flex items-center gap-[20px] pt-[10px]">
+                <p class="text-md font-bold">44,50
+₽</p>
+<p class="text-xs text-gray-500">за шт.</p>
+              </div>
+            </div>
+
+              <div class="flex items-center gap-[20px] ml-[30px] select-none bg-[#70C05B] text-white rounded-[8px] ">
+                <div class="flex items-center justify-center w-[100px] h-[40px] gap-[20px]">
+                  <button class="minus2  rounded  flex items-center justify-center text-xl font-bold">-</button>
+                <span class=" qty2 text-lg">2</span>
+                <button class="plus2  rounded  flex items-center justify-center text-xl font-bold">+</button>
+                </div>
+              </div>
+
+
+              <div class="ml-[60px]">
+                <p class="font-bold text-lg whitespace-nowrap">89,00
+₽</p>
+              </div>
+              </div>
+            </div>
+        
+
+
+            <div class="flex items-center justify-between bg-white w-[900px] h-[72px] rounded-lg p-4 mt-[100px] ">              
+            <div class="flex items-center justify-between relative opacity-40 pointer-events-none">
+              <label class="" for="">
+              <input type="checkbox" class="peer sr-only">
+              <div class="bg-green-300 peer-checked:bg-green-500"></div>
+
+              <img class="w-[80px] h-[60px] cursor-pointer" src="../images/doruble.png" alt="">
+              <input type="checkbox" class="absolute top-[-8px] left-1 w-[24px] h-[24px] bg-[#70C05B] cursor-pointer">
+            </label>
+
+            <div class="flex-1 ml-20">
+              <a class="flex items-center justify-center" href="">
+                <h2 class="text-sm font-semibold">Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+                <p class="font-bold text-lg text-[gray] ml-[120px]">Нет в наличии</p>
+              </a>
+
+              <div class="flex items-center gap-[20px] pt-[10px]">
+                <p class="text-md font-bold">44,50
+₽</p>
+<p class="text-xs whitespace-nowrap text-gray-500">за шт.</p>
+              </div>
+            </div>
+            </div>
+
+          </div>
+  
+        </div>
+      </section>
+    </main>
+
+
+    <footer class="bg-[#FBF8EC]">
+      <div class="container mx-auto pt-[150px]">
+        <div class=" xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
+          <div class="flex items-center justify-between gap-[60px]">
+            <div class="flex items-start">
+            <img class="object-contian" src="../images/logo.png" alt="">
+          </div>
+
+          <div class="flex items-center gap-[30px]">
+            
+                <a href="#">О компании</a>
+
+                <a href="#">Контакты</a>
+              
+                <a href="#">Вакансии</a>
+              
+                <a href="#">Статьи</a>
+              
+                <a href="#">Политика обработки персональных данных</a>
+          </div>
+
+          <div class="flex items-center gap-[20px]">
+            <a class="w-[40px]" href="#">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-js0W9HFrrqe6IlNrRgyjar4BKW7jIvokfQ&s" alt="">
+            </a>
+            <a class="w-[40px]" href="#">
+              <img src="https://cdn-icons-png.flaticon.com/512/733/733583.png" alt="">
+            </a>
+            <a class="w-[40px]" href="#">
+              <img src="https://cdn-icons-png.freepik.com/256/14047/14047486.png?semt=ais_white_label" alt="">
+            </a>
+            <a class="w-[40px]" href="#">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD-juPgT9sYYNeOTWa2dtcy_86xkWwKSG6rA&s" alt="">
+            </a>
+          </div>
+
+          <div>
+            <ul class="flex items-center gap-[20px]">
+              <li>
+                <a href="#">
+                  <img class="w-[40px]" src="https://st4.depositphotos.com/15317184/27028/v/450/depositphotos_270285308-stock-illustration-phone-and-call-line-icon.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="#">8 800 777 33 33</a>
+              </li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>
