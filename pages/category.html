@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#FBF8EC]">
+    
+    <script src="../js/main.js"></script>
+
+    <header class="shadow-[2px_4px_8px_0px_#0000001A] z-1 fixed w-full bg-white">
+        <nav class="container mx-auto px-3 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-5 md:gap-2 flex-1">
+              <a href="/index.html" class="flex items-center gap-2">
+                <img src="../images/logo.png" alt="logo" class="w-full h-8 md:w-10 md:h-10">
+                <p class="hidden lg:block font-bold uppercase text-sm lg:text-base">Северяночка</p>
+              </a>
+          
+              <a href="/pages/category.html" class="hidden md:flex items-center gap-1 md:gap-2 bg-[#70C05B] px-3 md:px-5 py-4 md:py-4 rounded-md">
+                <img src="https://cdn0.iconfinder.com/data/icons/user-interface-151/24/List_menu_toggle-512.png" alt="menu" class="w-full w-5 h-5">
+                <p class="hidden lg:block text-white text-xs lg:text-sm font-medium">Каталог</p>
+              </a>
+          
+              <div class="flex items-center border border-[#70C05B] rounded-md max-w-[500px] md lg:max-w-[340px] w-full xl:max-w-[560px]">
+                <input type="text" placeholder="Найти товар" class="px-4 w-full py-4 text-xs text-md ">
+                <button class="px-3">
+                  <img src="https://static.vecteezy.com/system/resources/thumbnails/009/652/218/small/magnifying-glass-icon-isolated-on-white-background-search-illustration-vector.jpg" alt="search" class=" w-[60px]">
+                </button>
+              </div>
+            </div>
+          
+            <div class="hidden md:flex items-center gap-3 md:gap-5 text-[10px] sm:text-xs md:text-sm ml-3">
+              <a href="/pages/izbrannoe.html" class="flex flex-col items-center">
+                <img src="https://www.freeiconspng.com/uploads/like-outline-icon-png-22.png" alt="favorites" class="w-full w-5 h-5 md:w-6 md:h-6">
+                <p>Избранное</p>
+              </a>
+          
+              <a href="/pages/vseproduct.html" class="flex flex-col items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/814/814987.png" alt="orders" class="w-full w-5 h-5 md:w-6 md:h-6">
+                <p>Заказы</p>
+              </a>
+          
+              <a href="/pages/korzina.html" class="flex flex-col items-center relative">
+                <img src="https://cdn-icons-png.flaticon.com/512/481/481384.png" alt="basket" class= "w-full w-5 h-5 md:w-6 md:h-6">
+                <p>Корзина</p>
+              </a>
+          
+              <div class="flex items-center gap-2">
+                <img src="../images/avatar.png" alt="Avatar" class="w-full w-6 h-6 md:w-8 md:h-8 rounded-full object-cover">
+                     
+                <select id="Алексей" class="hidden lg:block bg-transparent border-none text-gray-800 font-medium cursor-pointer">
+                  <option value="Алексей">Алексей</option>
+                  <option value="Иван">Иван</option>
+                  <option value="Мария">Мария</option>
+                  <option value="Выход">Выход</option>
+                </select>
+                </div>              
+            </div>
+          </nav>
+          
+    </header>
+
+
+
+        <main>
+      <section>
+        <div class="container mx-auto pt-[120px]">
+          <div class="flex items-center gap-[20px]">
+            <a href="../index.html">Главная</a>
+            <img class="w-[10px]" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJUAAACUCAMAAACtIJvYAAAAZlBMVEX///8AAADu7u7x8fHMzMz39/fq6upRUVEgICBNTU2JiYlBQUFEREQWFhba2tqCgoJ6eno1NTV0dHQbGxteXl5WVlYsLCxvb287OzvCwsIMDAxjY2PU1NSmpqZqamqdnZ2zs7OSkpLVOdzkAAACbklEQVR4nO2cXXOCMBBFAwiofFRrpdZibf//n+wwKKKQXPLCXWb2Pvtw5rCJIVlizMTU2+xcHC/J1N/PkfgnaFNd2SiPlFXQ5Z0Nc09yCnr5ZOO0qavgKSJsPZsSYqusXqEE2AqzIRTdVnwcg2Lb+hqHImMNKl3CQwzXVqpgR6MqCzsV7yE6qWi2XE+QaGvvpGLZ+nVTkbCijUisxF1ZLKzaOQxpWOVBJBa09UbBEmprhbBItmSW/ApNECRbZ7U1PSWgImGpLZ+oLZ9AW1sKltryCbQldJbn2Kq1tjyitnyitnyitryw1JYPltrywVJbPlhqywcL2SJhof0ttdXHkmnLerxJtoU2Kf8oWEu1pbXVy1JHIqfkl1pbJFvouEBt9QL/qi8ULGiL00mJbP1QqFAbxJpDBUZiUZKw3LZWHCh3c0ZRU6Ci0R7FLoeQAZWA+T1lQIW5G4pSVonEdQM0lcbzQ8HWqG8C1HiHcC8bhqmRXmo1NRaRpsCMrqa6QFO5mmoDR5+aukWmKfuHDG0+1FQbkaYiBKWmbokRVMYwhQpdZE3JNBXNDyVzlYBesSimJM5T8GX0KNEUY40eom+aGKZi8FWamroHmsoJUGpqapZpasOYPJGplLBpLdNUiqAkmkolmsrVVBuZNQXXUxJNUWoK7g4ToESagu99jNEXI1OZSFOMQrfcc9PlJHH0MUyZHYDaM6BQHw7FlAFLT4opk7hbLTmmwDUWHFOgrEim3LdFVCwoY+wHbDRTxjFdEU3ZL3VimjK2Trg1F8qYizxTTa4DqIKwyBvk1ZYAU02ebR0kmGpykWeqyaPfeZazmX8MRSY9cwBa8QAAAABJRU5ErkJggg==" alt="">
+            <h1 class="text-[#8F8F8F]">Каталог</h1>
+          </div>
+        </div>
+      </section>
+
+
+      <section>
+        <div class="container mx-auto pt-[60px]">
+
+          <div>
+            <h1 class="text-[64px] font-bold font-rubik">Каталог</h1>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] px-[10px]">
+
+            <!-- card1 -->
+            <div class="card group col-span-2 relative h-[200px] transition-transform duration-500 hover:scale-105 hover:cursor-pointer">
+              <h1 class="text-white z-1 font-bold text-[18px] absolute bottom-[15px] left-[20px]">Молоко, сыр, яйцо</h1>
+              <img class="w-full h-full object-cover" src="../images/katalog1.png" alt="">
+              <div class="absolute top-0 left-0 bg-linear-to-b from-[green]/0 group-hover:to-[red]/100 transition-transform  duration-500  to-[green]/80 w-full h-full"></div>
+            </div>
+            
+  
+  
+            <!-- Card2 -->
+              <div class="card group relative  h-[200px] transition-transform duration-500 hover:scale-105 hover:cursor-pointer">
+                <h1 class="text-white z-1 font-bold text-[18px] absolute bottom-[15px] left-[20px]">Хлеб</h1>
+                <img class="w-full h-full object-cover" src="../images/katalog2.png" alt="">
+                <div class="absolute top-0 left-0 bg-linear-to-b from-[green]/0 group-hover:to-[red]/100 transition-transform  duration-500  to-[green]/80 w-full h-full"></div>
+              </div>
+  
+             <!-- Card3 -->
+              <div class="card group relative h-[200px] transition-transform duration-500 hover:scale-105 hover:cursor-pointer">
+                <h1 class="text-white z-1 font-bold text-[18px] absolute bottom-[15px] left-[20px]">Фрукты и овощи</h1>
+                <img class="w-full h-full object-cover" src="../images/katalog3.png" alt="">
+                <div class="absolute top-0 left-0 bg-linear-to-b from-[green]/0 group-hover:to-[red]/100 transition-transform  duration-500  to-[green]/80 w-full h-full"></div>
+              </div>
+  
+  
+            <!-- Card4 -->
+              <div class="card group relative h-[200px] transition-transform duration-500 hover:scale-105 hover:cursor-pointer">
+                <h1 class="text-white z-1 font-bold text-[18px] absolute bottom-[15px] left-[13px]">Замороженные продукты</h1>
+                <img class="w-full h-full object-cover" src="../images/katalog4.png" alt="">
+                <div class="absolute top-0 left-0 bg-linear-to-b from-[green]/0 group-hover:to-[red]/100 transition-transform  duration-500  to-[green]/80 w-full h-full"></div>
+              </div>
+  
+            <!-- Card5-->
+
+                          <div class="card group relative h-[200px] transition-transform duration-500 hover:scale-105 hover:cursor-pointer">
+                <h1 class="text-white z-1 font-bold text-[18px] absolute bottom-[15px] left-[13px]">Напитки</h1>
+                <img class="w-full h-full object-cover" src="../images/katalog5.png" alt="">
+                <div class="absolute top-0 left-0 bg-linear-to-b from-[green]/20 group-hover:to-[red]/100 transition-transform  duration-500  to-[green]/80 w-full h-full"></div>
+              </div>
+  
+            <!-- Card6-->
+              <div class="card group relative h-[200px] transition-transform duration-500 hover:scale-105 hover:cursor-pointer">
+                <h1 class="text-white z-1 font-bold text-[18px] absolute bottom-[15px] left-[13px]">Кондитерские изделия</h1>
+                <img class="w-full h-full object-cover" src="../images/katalog6.png" alt="">
+                <div class="absolute top-0 left-0 bg-linear-to-b from-[green]/0 group-hover:to-[red]/100 transition-transform  duration-500  to-[green]/80 w-full h-full"></div>
+              </div>
+  
+             <!-- Card7-->
+              <div class="card group relative h-[200px] transition-transform duration-500 hover:scale-105 hover:cursor-pointer">
+                <h1 class="text-white z-1 font-bold text-[18px] absolute bottom-[15px] left-[13px]">Чай, кофе</h1>
+                <img class="w-full h-full object-cover" src="../images/katalog7.png" alt="">
+                <div class="absolute top-0 left-0 bg-linear-to-b from-[green]/0 group-hover:to-[red]/100 transition-transform  duration-500  to-[green]/80 w-full h-full"></div>
+              </div>
+  
+   
+            <!-- Card8 -->
+            <div class="card group relative h-[200px] transition-transform duration-500 hover:scale-105 hover:cursor-pointer">
+                <h1 class="text-white z-1 font-bold text-[18px] absolute bottom-[15px] left-[13px]">Бакалея</h1>
+                <img class="w-full h-full object-cover" src="../images/katalog8.png" alt="">
+                <div class="absolute top-0 left-0 bg-linear-to-b from-[green]/0 group-hover:to-[red]/100 transition-transform  duration-500  to-[green]/80 w-full h-full"></div>
+              </div>
+  
+            <!-- Card9 -->
+            <div class="card group relative h-[200px] transition-transform duration-500 hover:scale-105 hover:cursor-pointer">
+                <h1 class="text-white z-1 font-bold text-[18px] absolute bottom-[15px] left-[13px]">Здоровое питание</h1>
+                <img class="w-full h-full object-cover" src="../images/katalog9.png" alt="">
+                <div class="absolute top-0 left-0 bg-linear-to-b from-[green]/0 group-hover:to-[red]/100 transition-transform  duration-500  to-[green]/80 w-full h-full"></div>
+              </div>
+  
+            <!-- Card10 -->
+            <div class="card group col-span-2 relative h-[200px] transition-transform duration-500 hover:scale-105 hover:cursor-pointer">
+                <h1 class="text-white z-1 font-bold text-[18px] absolute bottom-[15px] left-[13px]">Зоотовары</h1>
+                <img class="w-full h-full object-cover" src="../images/katalog10.png" alt="">
+                <div class="absolute top-0 left-0 bg-linear-to-b from-[green]/0 group-hover:to-[red]/100 transition-transform  duration-500  to-[green]/80 w-full h-full"></div>
+              </div>
+  
+  
+             <!-- Card11 -->
+            <div class="card group relative h-[200px] transition-transform duration-500 hover:scale-105 hover:cursor-pointer">
+                <h1 class="text-white z-1 font-bold text-[18px] absolute bottom-[15px] left-[13px]">Детское питание</h1>
+                <img class="w-full h-full object-cover" src="../images/katalog11.png" alt="">
+                <div class="absolute top-0 left-0 bg-linear-to-b from-[green]/0 group-hover:to-[red]/100 transition-transform  duration-500  to-[green]/80 w-full h-full"></div>
+              </div>
+  
+            <!-- Card12 -->
+                         <div class="card group lg:col-span-2 relative h-[200px] transition-transform duration-500 hover:scale-105 hover:cursor-pointer">
+                <h1 class="text-white z-1 font-bold text-[18px] absolute bottom-[15px] left-[13px]">Мясо, птица, колбаса</h1>
+                <img class="w-full h-full object-cover" src="../images/katalog12.png" alt="">
+                <div class="absolute top-0 left-0 bg-linear-to-b from-[green]/0 group-hover:to-[red]/100 transition-transform  duration-500  to-[green]/80 w-full h-full"></div>
+              </div>
+  
+            <!-- Card13 -->
+            <div class="card group col-span-2 md:col-span-1 relative h-[200px] transition-transform duration-500 hover:scale-105 hover:cursor-pointer">
+                <h1 class="text-white z-1 font-bold text-[18px] absolute bottom-[15px] left-[13px]">Непродовольственные <br> товары</h1>
+                <img class="w-full h-full object-cover" src="../images/katalog13.png" alt="">
+                <div class="absolute top-0 left-0 bg-linear-to-b from-[green]/0 group-hover:to-[red]/100 transition-transform  duration-500  to-[green]/80 w-full h-full"></div>
+              </div>
+          </div>
+          </div>
+      </section>
+    </main>
+
+    <footer class="py-[90px] bg-[#FBF8EC]">
+    <div class="container mx-auto py-[90px]">
+
+        <div class="flex items-center justify-between max-[1050px]:gap-10 max-[1050px]:flex-col">
+            <img src="../images/logo.png" alt="">
+        
+            <div>
+                <ul class="flex items-center gap-[40px] max-[1050px]:flex-col">
+                <li>
+                    <a href="">О компании</a>
+                </li>
+                <li>
+                    <a href="">Контакты</a>
+                </li>
+                <li>
+                    <a href="">Вакансии</a>
+                </li>
+                <li>
+                    <a href="">Статьи</a>
+                </li>
+                <li>
+                    <a href="">Политика обработки персональных данных</a>
+                </li>
+            </ul>
+            </div>
+        
+
+    
+            <div>
+                <a class="flex items-center gap-[20px]" href="">
+                <img class="w-[40px] " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-js0W9HFrrqe6IlNrRgyjar4BKW7jIvokfQ&s" alt="">
+                <img class="w-[40px]" src="https://cdn-icons-png.flaticon.com/512/733/733583.png" alt="">
+                <img class="w-[40px]" src="https://cdn-icons-png.freepik.com/256/14047/14047486.png?semt=ais_white_label" alt="">
+                <img class="w-[40px]" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD-juPgT9sYYNeOTWa2dtcy_86xkWwKSG6rA&s" alt="">
+            </a>
+            </div>
+
+            <div>
+                <a class="flex items-center gap-[20px]" href="">
+                <img class="w-[40px]" src="https://st4.depositphotos.com/15317184/27028/v/450/depositphotos_270285308-stock-illustration-phone-and-call-line-icon.jpg" alt="">
+                <h1>8 800 777 33 33</h1>
+            </a>
+            </div>
+        </div>
+    </div>
+    </div>
+ </footer>
+</body>
+</html>
