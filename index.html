@@ -7,8 +7,9 @@
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>   
 </head>
 <body>
-    <script src="./js/main.js"></script>
 
+    <div id="loading" class=" fixed  z-1 w-full h-full flex items-center justify-center top-0">
+</div>
      <header class="shadow-[2px_4px_8px_0px_#0000001A] z-1 fixed w-full bg-white">
         <nav class="container mx-auto px-3 py-4 flex justify-between items-center">
             <div class="flex items-center gap-5 md:gap-2 flex-1">
@@ -22,18 +23,21 @@
                 <p class="hidden lg:block text-white text-xs lg:text-sm font-medium">Каталог</p>
               </a>
           
-              <div class="flex items-center border border-[#70C05B] rounded-md max-w-[500px] md:max-w-[400px] lg:max-w-[340px] w-full xl:max-w-[560px]">
-                <input type="text" placeholder="Найти товар" class="px-4 w-full py-4 text-xs text-md ">
-                <button class="px-3">
-                  <img src="https://static.vecteezy.com/system/resources/thumbnails/009/652/218/small/magnifying-glass-icon-isolated-on-white-background-search-illustration-vector.jpg" alt="search" class=" w-[60px]">
-                </button>
-              </div>
+             <div class="p-[10px] flex items-center  rounded-md max-w-[900px] w-full md:max-w-[400px] lg:max-w-[340px] xl:max-w-[560px] top-0 z-1">
+                <di class="max-w-[700px] relative w-full border-[#70C05B]  border-[2px] rounded-[10px] outline-none">
+                    <input id="searchInput" class="w-full h-full p-[20px] outline-none text-[#8F8F8F]" type="Mahsulotlarni qidirish" placeholder="Найти товар">
+                    <div id="searchCards" class="w-full hidden overflow-y-scroll flex flex-col gap-[10px] top-[80px] absolute max-h-[300px] bg-[white] shadow-lg rounded-[20px] p-[20px]">
+                    </div>
+                </div>
+
             </div>
+
+    
           
-            <div class="hidden md:flex items-center gap-3 md:gap-5 text-[10px] sm:text-xs md:text-sm ml-3">
-              <a href="/pages/izbrannoe.html" class="flex flex-col items-center">
+           <div  class="hidden md:flex items-center gap-3 md:gap-5 text-[10px] sm:text-xs md:text-sm ml-3">
+              <a < href="/pages/izbrannoe.html" class="flex flex-col items-center relative">
                 <img src="https://www.freeiconspng.com/uploads/like-outline-icon-png-22.png" alt="favorites" class="w-full w-5 h-5 md:w-6 md:h-6">
-                <p>Избранное</p>
+                <p id="like-badge"> Избранное </p> <span id="badge" class="w-[20px] h-[20px] rounded-[50%] absolute top-[-8px] left-15 p-[4px] flex items-center justify-center text-white text-[10px] font-bold bg-[green]">0</span> 
               </a>
           
               <a href="/pages/vseproduct.html" class="flex flex-col items-center">
@@ -41,10 +45,12 @@
                 <p>Заказы</p>
               </a>
           
-              <a href="/pages/korzina.html" class="flex flex-col items-center relative">
+              
+                <a href="/pages/korzina.html" class="flex flex-col items-center relative">
                 <img src="https://cdn-icons-png.flaticon.com/512/481/481384.png" alt="basket" class= "w-full w-5 h-5 md:w-6 md:h-6">
-                <p>Корзина</p>
+                Корзина <span id="badge" class="w-[20px] h-[20px] rounded-[50%] p-[4px] flex items-center justify-center absolute top-[-8px] left-13  text-white text-[10px] font-bold bg-[red]">0</span>
               </a>
+              
           
               <div class="flex items-center gap-2">
                 <img src="../images/avatar.png" alt="Avatar" class="w-full w-6 h-6 md:w-8 md:h-8 rounded-full object-cover">
@@ -63,8 +69,8 @@
 
     <main class="bg-[#FBF8EC]">
 
-        <section>
-            <div class="container mx-auto pt-[100px] max-w-8xl">
+        <section "">
+            <div class="container mx-auto pt-[100px] max-w-8xl ">
                 <div class="grid md:grid-cols-2  flex items-center">
                     <img class="hidden lg:block" src="./images/home.png" alt="">
                     <h1 class="text-[48px] md:text-center font-[700] items-center">Доставка бесплатно от 1000 ₽</h1>
@@ -81,31 +87,11 @@
                 </a>
                 </div>
 
-                <div class="grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 2xl:px-[127px]   gap-[30px] flex items-center justify-center">
-
-                    <div class=" h-[100%] max-w-[100%] w-full h-full rounded-[4px] bg-[white] mt-[30px] transition-transform duration-500 hover:scale-110">
-                          <img class="max-w-[100%] h-[310px] mx-auto" src="./images/bllinchik.png" alt="">
-                     <p class=" relative bottom-22 ml-[25px]  max-w-[70px] h-[36px] rounded-[4px] bg-[#FF6633] text-white flex items-center justify-center transition-transform duration-500 hover:scale-110">-50%</p>
-                    <a class="flex items-center justify-between mt-[-30px]" href="">
-                        <img class="max-w-[71px] h-[27px] ml-[20px] " src="./images/44,50.png" alt="">
-                        <img class="max-w-[69px] h-[24px] mr-[20px]" src="./images/50,50.png" alt="">
-                    </a>
-
-                    <a class="flex items-center justify-between mt-[10px]" href="">
-                        <h1 class="text-[18px] font-[rubik] font-[400] text-[#BFBFBF] ml-[20px]">С картой</h1>
-                        <h2 class="text-[18px] font-[rubik] font-[400] text-[#BFBFBF] ml-[20px] mr-[20px]">Обычная</h2>
-                    </a>
-
-                    <h1 class="font-[rubik] leading-[150%] font-[700] text-[#414141] mt-[10px] ml-[20px]">Г/Ц Блинчики с мясом вес, <br> Россия</h1>
-
-                    <img class="mt-[5px] ml-[20px] max-w-[300px] h-[20px]" src="./images/star.png" alt="">
-
-                    <button class="mx-auto block px-23   md:w-auto w-[290px] h-[40px] text-[20px]  rounded-[5px] border border-[#70C05B] hover:bg-[#70C05B] hover:text-[white] font-[rubik] font-[400] text-[#70C05B] cursor-pointer mt-[20px] hover:bg-[#FF6633] hover:border-[#FF6633]">В корзину</button> 
-                </div>
+                <div class="cardlar grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 2xl:px-[127px]   gap-[30px] flex items-center justify-center">
 
 
-                <div class="max-w-[100%] h-[100%] rounded-[4px] bg-[white] mt-[30px] transition-transform duration-500 hover:scale-110">
-                    <img class="max-w-[100%] h-[265px] mx-auto" src="./images/moloko.png" alt="">
+                <!-- <div class="max-w-[80%] h-[91%] rounded-[4px] bg-[white] mt-[10px] transition-transform duration-500 hover:scale-110">
+                    <img class="max-w-[100%] h-[190px] mx-auto" src="./images/moloko.png" alt="">
                     <p class=" relative bottom-10 ml-[25px]  max-w-[70px] h-[36px] rounded-[4px] bg-[#FF6633] text-white flex items-center justify-center transition-transform duration-500 hover:scale-110">-50%</p>
                     <a class="flex items-center justify-between" href="">
                         <img class="max-w-[71px] h-[27px] ml-[20px]" src="./images/44,50.png" alt="">
@@ -125,10 +111,10 @@
                 </div>
 
 
-                <div class="w-[100%] h-[100%] rounded-[4px] bg-[white] mt-[30px] transition-transform duration-500 hover:scale-110">
+                <div class="max-w-[80%] h-[91%] rounded-[4px] bg-[white] mt-[10px] transition-transform duration-500 hover:scale-110">
             
-                    <img class="max-w-[100%] h-[255px] mx-auto" src="./images/gosht.png" alt="">
-                    <p class=" relative bottom-10 ml-[2px]  w-[70px] h-[36px] rounded-[4px] bg-[#FF6633] text-white flex items-center justify-center transition-transform duration-500 hover:scale-110">-50%</p>
+                    <img class="max-w-[85%] h-[182px] mx-auto" src="./images/gosht.png" alt="">
+                    <p class=" relative bottom-10 ml-[15px]  w-[70px] h-[36px] rounded-[4px] bg-[#FF6633] text-white flex items-center justify-center transition-transform duration-500 hover:scale-110">-50%</p>
                     <a class="flex items-center justify-between mt-[10px]" href="">
                         <img class="max-w-[71px] h-[27px] ml-[20px]" src="./images/44,50.png" alt="">
                         <img class="max-w-[69px] h-[24px] mr-[20px]" src="./images/50,50.png" alt="">
@@ -147,8 +133,8 @@
                 </div>
 
 
-                <div class="w-[100%] h-[100%] rounded-[4px] bg-[white] mt-[30px] transition-transform duration-500 hover:scale-110">
-                    <img class="max-w-[100%] h-[255px] mx-auto" src="./images/sosiska.png" alt="">
+                <div class="max-w-[80%] h-[91%] rounded-[4px] bg-[white] mt-[10px] transition-transform duration-500 hover:scale-110">
+                    <img class="max-w-[100%] h-[180px] mx-auto" src="./images/sosiska.png" alt="">
                     <p class=" relative bottom-10 ml-[5px]  max-w-[70px] h-[36px] rounded-[4px] bg-[#FF6633] text-white flex items-center justify-center transition-transform duration-500 hover:scale-110">-50%</p>
                     <a class="flex items-center justify-between mt-[10px]" href="#">
                         <img class="max-w-[71px] h-[27px] ml-[20px]" src="./images/44,50.png" alt="">
@@ -165,10 +151,8 @@
                     <img class="mt-[20px] ml-[20px] max-w-[300px] h-[20px]" src="./images/star3.png" alt="">
 
                     <button class="mx-auto block w-[290px] h-[40px] md:w-auto px-23 rounded-[5px] border border-[#70C05B] hover:bg-[#70C05B] hover:text-[white] font-[rubik] font-[400] text-[#70C05B] text-[20px] cursor-pointer mt-[20px] hover:border-[#FF6633] hover:bg-[#FF6633] ">В корзину</button> 
+                </div> -->
                 </div>
-                </div>
-
-
             </div>
         </section>
 
@@ -182,71 +166,8 @@
                 </a>
                 </div>
 
-                <div class="grid lg:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-[30px] flex items-center justify-center mx-auto max-w-7xl">
-
-                    <div class="w-[100%] h-[100%] rounded-[4px] bg-[white] mt-[30px] transition-transform duration-500 hover:scale-110">
-                    <img class="max-w-[100%] h-[270px] mx-auto" src="./images/kolbasa.png" alt="">
+                <div class="NewProducts grid lg:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-[30px] flex items-center justify-center mx-auto max-w-7xl">
                     
-                    <h1 class="ml-[20px] mt-[20px] text-[20px] font-[700]">599,99
-₽</h1>
-                    
-
-                    <h1 class="font-[rubik] leading-[150%] font-[700] text-[#414141] text-[20px] mt-[30px] ml-[20px]">Комбайн КЗС-1218 <br> «ДЕСНА-ПОЛЕСЬЕ GS12»</h1>
-
-                    <img class="mt-[20px] ml-[20px] max-w-[300px] h-[20px]" src="./images/star.png" alt="">
-
-                    <button class="mx-auto text-[20px] block w-[290px] h-[40px] md:w-auto px-23 text-[20px] rounded-[5px] border border-[#70C05B] hover:bg-[#70C05B] hover:text-[white] font-[rubik] font-[400] text-[#70C05B] cursor-pointer mt-[20px] hover:border-[#FF6633] hover:bg-[#FF6633] ">В корзину</button> 
-                </div>
-
-
-                <div class="w-[100%] h-[100%] rounded-[4px] bg-[white] mt-[30px] transition-transform duration-500 hover:scale-110">
-                    <img class="max-w-[100%] h-[275px] mx-auto" src="./images/gosht.png" alt="">
-                    <a class="flex items-center justify-between mt-[10px]" href="">
-                        <img class="max-w-[71px] h-[27px] ml-[20px]" src="./images/44,50.png" alt="">
-                        <img class="max-w-[69px] h-[24px] mr-[20px]" src="./images/50,50.png" alt="">
-                    </a>
-
-                    <a class="flex items-center justify-between mt-[10px]" href="">
-                        <h1 class="text-[18px] font-[rubik] font-[400] text-[#BFBFBF] ml-[20px]">С картой</h1>
-                        <h2 class="text-[18px] font-[rubik] font-[400] text-[#BFBFBF] ml-[20px] mr-[20px]">Обычная</h2>
-                    </a>
-
-                    <h1 class="font-[rubik] leading-[150%] font-[700] text-[#414141] mt-[10px] ml-[20px]">Колбаса сырокопченая МЯСНАЯ <br> ИСТОРИЯ  Сальчичон и Тоскан...</h1>
-
-                    <img class="mt-[20px] ml-[20px] max-w-[300px] h-[20px]" src="./images/star3.png" alt="">
-
-                    <button class="mx-auto block w-[290px] h-[40px] md:w-auto px-23 rounded-[5px] text-[20px] border border-[#70C05B] font-[rubik] font-[400] text-[#70C05B] cursor-pointer mt-[20px] hover:border-[#FF6633] hover:bg-[#FF6633] hover:text-[white]">В корзину</button> 
-                </div>
-
-
-                <div class="w-[100%] h-[100%] rounded-[4px] bg-[white] mt-[30px] transition-transform duration-500 hover:scale-110">
-                    <img class="max-w-[100%] h-[270px] mx-auto" src="./images/sosiska.png" alt="">
-                    
-                    <h1 class="ml-[20px] mt-[20px] text-[20px] font-[700]">159,99
-₽</h1>
-                    
-
-                    <h1 class="font-[rubik] leading-[150%] text-[20px] font-[700] text-[#414141] mt-[30px] ml-[20px]">Комбайн КЗС-1218 <br> «ДЕСНА-ПОЛЕСЬЕ GS12»</h1>
-
-                    <img class="mt-[20px] ml-[20px] max-w-[300px] h-[20px]" src="./images/star.png" alt="">
-
-                    <button class="mx-auto block w-[290px] h-[40px] md:w-auto px-23 rounded-[5px] border border-[#70C05B] hover:bg-[#70C05B] hover:text-[white] text-[20px] font-[rubik] font-[400] text-[#70C05B] cursor-pointer mt-[20px] hover:border-[#FF6633] hover:bg-[#FF6633] ">В корзину</button> 
-                </div>
-
-
-                <div class="w-[100%] h-[100%] rounded-[4px] bg-[white] mt-[30px] transition-transform duration-500 hover:scale-110">
-                    <img class="max-w-[100%] h-[270px] mx-auto" src="./images/moloko.png" alt="">
-                    
-                    <h1 class="ml-[20px] mt-[20px] text-[20px] font-[700]">49,39
-₽</h1>
-                    
-
-                    <h1 class="font-[rubik] leading-[150%] text-[20px] font-7400] text-[#414141] mt-[30px] ml-[20px]">Комбайн КЗС-1218 <br> «ДЕСНА-ПОЛЕСЬЕ GS12»</h1>
-
-                    <img class="mt-[20px] ml-[20px] max-w-[300px] h-[20px]" src="./images/star.png" alt="">
-
-                    <button class="mx-auto text-[20px] block w-[290px] h-[40px] md:w-auto px-23 rounded-[5px] border border-[#70C05B] hover:bg-[#70C05B] hover:text-[white] font-[rubik] font-[400] text-[#70C05B] cursor-pointer mt-[20px] hover:border-[#FF6633] hover:bg-[#FF6633] ">В корзину</button> 
-                </div>
                 </div>
             </div>
         </section>
@@ -256,73 +177,15 @@
         <section>
             <div class="container mx-auto py-[90px]">
                  <div class="flex items-center justify-between mx-auto max-w-7xl">
-                    <h1 class="text-[36px] font-[700]">Новинки</h1>
+                    <h1 class="text-[36px] font-[700]">Покупали раньше</h1>
                 <a class="flex items-center gap-[10px]" href="">
                     <h1 class="text-[#606060]">Все продукты</h1>
                 </a>
                 </div>
 
                 
-                <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2  gap-[30px] flex items-center justify-center mx-auto max-w-7xl">
+                <div class="RecentlyPurchasedProducts grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2  gap-[30px] flex items-center justify-center mx-auto max-w-7xl mt-[30px]">
 
-                    <div class="w-[100%] h-[100%] rounded-[4px] bg-[white] mt-[30px] transition-transform duration-500 hover:scale-110">
-                    <img class="max-w-[100%] h-[270px] mx-auto" src="./images/kalbasa.png" alt="">
-                    
-                    <h1 class="ml-[20px] mt-[20px] text-[20px] font-[700]">77,99
-₽</h1>
-                    
-
-                    <h1 class="font-[rubik] leading-[150%] font-bold text-[20px] text-[#414141] mt-[30px] ml-[20px]">Комбайн КЗС-1218 <br> «ДЕСНА-ПОЛЕСЬЕ GS12»</h1>
-
-                    <img class="mt-[20px] ml-[20px] max-w-[300px] h-[20px]" src="./images/star.png" alt="">
-
-                    <button class="mx-auto text-[20px] block w-[290px] h-[40px] md:w-auto px-23 rounded-[5px] border border-[#70C05B] hover:bg-[#70C05B] hover:text-[white] font-[rubik] font-[400] text-[#70C05B] cursor-pointer mt-[20px] hover:border-[#FF6633] hover:bg-[#FF6633] ">В корзину</button> 
-                </div>
-
-
-                <div class="w-[100%] h-[100%] rounded-[4px] bg-[white] mt-[30px] transition-transform duration-500 hover:scale-110">
-                    <img class="max-w-[100%] h-[270px] mx-auto" src="./images/sosiska.png" alt="">
-                    
-                    <h1 class="ml-[20px] mt-[20px] text-[20px] font-[700]">159,99
-₽</h1>
-                    
-
-                    <h1 class="font-[rubik] leading-[150%] font-[700] text-[20px] text-[#414141] mt-[30px] ml-[20px]">Комбайн КЗС-1218 <br> «ДЕСНА-ПОЛЕСЬЕ GS12»</h1>
-
-                    <img class="mt-[20px] ml-[20px] max-w-[300px] h-[20px]" src="./images/star.png" alt="">
-
-                    <button class="mx-auto block w-[290px] text-[20px] h-[40px] md:w-auto px-23 rounded-[5px] border border-[#70C05B] hover:bg-[#70C05B] hover:text-[white] font-[rubik] font-[400] text-[#70C05B] cursor-pointer mt-[20px] hover:border-[#FF6633] hover:bg-[#FF6633] ">В корзину</button> 
-                    </div>
-
-
-                    <div class="w-[100%] h-[100%] rounded-[4px] bg-[white] mt-[30px] transition-transform duration-500 hover:scale-110">
-                    <img class="max-w-[100%] h-[270px] mx-auto" src="./images/kolbasa.png" alt="">
-                    
-                    <h1 class="ml-[20px] mt-[20px] text-[20px] font-[700]">599,99
-₽</h1>
-                    
-
-                    <h1 class="font-[rubik] leading-[150%] font-[700] text-[20px] text-[#414141] mt-[30px] ml-[20px]">Комбайн КЗС-1218 <br> «ДЕСНА-ПОЛЕСЬЕ GS12»</h1>
-
-                    <img class="mt-[20px] ml-[20px] w-[300px] h-[20px]" src="./images/star.png" alt="">
-
-                     <button class="mx-auto block w-[290px] h-[40px] md:w-auto px-23 rounded-[5px] border border-[#70C05B] hover:bg-[#70C05B] hover:text-[white] text-[20px] font-[rubik] font-[400] text-[#70C05B] cursor-pointer mt-[20px] hover:border-[#FF6633] hover:bg-[#FF6633] ">В корзину</button> 
-                </div>
-
-
-                <div class="w-[100%] h-[100%] rounded-[4px] bg-[white] mt-[30px] transition-transform duration-500 hover:scale-110">
-                    <img class="max-w-[100%] h-[270px] mx-auto" src="./images/moloko.png" alt="">
-                    
-                    <h1 class="ml-[20px] mt-[20px] text-[20px] font-[700]">49,39
-₽</h1>
-                    
-
-                    <h1 class="font-[rubik] leading-[150%] font-[700] text-[20px] text-[#414141] mt-[30px] ml-[20px]">Комбайн КЗС-1218 <br> «ДЕСНА-ПОЛЕСЬЕ GS12»</h1>
-
-                    <img class="mt-[20px] ml-[20px] w-[300px] h-[20px]" src="./images/star.png" alt="">
-
-                    <button class="mx-auto text-[20px] block w-[290px] h-[40px] md:w-auto px-23 rounded-[5px] border border-[#70C05B] hover:bg-[#70C05B] hover:text-[white] font-[rubik] font-[400] text-[#70C05B] cursor-pointer mt-[20px] hover:border-[#FF6633] hover:bg-[#FF6633] ">В корзину</button> 
-                </div>
                 </div>
             </div>
 
@@ -341,7 +204,7 @@
                         <p class="font-[400] leading-[150%] text-[22px] text-[#414141] mt-[10px]">И получайте бонусы при покупке <br> в магазинах и на сайте</p>
                     </a>
 
-                     <img class="max-w-[100%]  h-[120px] rounded-[10px] rotate-15" src="./images/karta.jpg" alt="">
+                     <img class="max-w-[100%]  h-[95px] rounded-[10px] rotate-15" src="./images/karta.jpg" alt="">
                 </div>
 
 
@@ -351,7 +214,7 @@
                         <p class="font-[400] leading-[150%] text-[22px] text-[#414141] mt-[10px]">И получайте вдвое больше <br> бонусов</p>
                     </a>
 
-                     <img class="max-w-[100%] h-[180px] rounded-[10px] " src="./images/korzinka.png" alt="">
+                     <img class="max-w-[100%] h-[170px] rounded-[10px] " src="./images/korzinka.png" alt="">
                 </div>
                 </div>
             </div>
@@ -494,5 +357,12 @@
     </div>
     </div>
  </footer>
+
+
+
+    <script src="./products-data.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/main.js"></script>
+
 </body>
 </html>

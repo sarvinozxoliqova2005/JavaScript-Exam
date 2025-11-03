@@ -8,7 +8,7 @@
 </head>
 <body class="bg-[#FBF8EC]">
     
-    <script src="../js/main.js"></script>
+   
 
     <header class="shadow-[2px_4px_8px_0px_#0000001A] z-1 fixed w-full bg-white">
         <nav class="container mx-auto px-3 py-4 flex justify-between items-center">
@@ -23,14 +23,24 @@
                 <p class="hidden lg:block text-white text-xs lg:text-sm font-medium">Каталог</p>
               </a>
           
-              <div class="flex items-center border border-[#70C05B] rounded-md max-w-[500px] md lg:max-w-[340px] w-full xl:max-w-[560px]">
+              <!-- <div class="flex items-center border border-[#70C05B] rounded-md max-w-[500px] md lg:max-w-[340px] w-full xl:max-w-[560px]">
                 <input type="text" placeholder="Найти товар" class="px-4 w-full py-4 text-xs text-md ">
                 <button class="px-3">
                   <img src="https://static.vecteezy.com/system/resources/thumbnails/009/652/218/small/magnifying-glass-icon-isolated-on-white-background-search-illustration-vector.jpg" alt="search" class=" w-[60px]">
                 </button>
               </div>
-            </div>
+            </div> -->
           
+            <div class="p-[10px] flex items-center  rounded-md max-w-[900px] w-full md:max-w-[400px] lg:max-w-[340px] xl:max-w-[560px] top-0 z-1">
+                <di class="max-w-[700px] relative w-full border-[#70C05B]  border-[2px] rounded-[10px] outline-none">
+                    <input id="searchInput" class="w-full h-full p-[20px] outline-none text-[#8F8F8F]" type="Mahsulotlarni qidirish" placeholder="Найти товар">
+                    <div id="searchCards" class="w-full hidden overflow-y-scroll flex flex-col gap-[10px] top-[80px] absolute max-h-[300px] bg-[white] shadow-lg rounded-[20px] p-[20px]">
+                    </div>
+                </div>
+
+            </div>
+
+
             <div class="hidden md:flex items-center gap-3 md:gap-5 text-[10px] sm:text-xs md:text-sm ml-3">
               <a href="/pages/izbrannoe.html" class="flex flex-col items-center">
                 <img src="https://www.freeiconspng.com/uploads/like-outline-icon-png-22.png" alt="favorites" class="w-full w-5 h-5 md:w-6 md:h-6">
@@ -232,5 +242,9 @@
     </div>
     </div>
  </footer>
+
+ <script src="../products-data.js"></script>
+ <script src="../js/search.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

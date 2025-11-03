@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../imtihon5 3/products-data"
+		},
+		{
+			"path": "../../imtihon5 3/assets"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "4-oy Exam"
+	}
+}
