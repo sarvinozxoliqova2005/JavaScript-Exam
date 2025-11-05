@@ -27,5 +27,5 @@ search.addEventListener("input" ,() => {
                         </div>
                     </div>`
     }): searchCards.innerHTML = `
-    <div class = "text-center" > Mahsulot topilmadi</div>`
+    <div class = "text-center" > Mahsulot topilmadi!</div>`
 })
