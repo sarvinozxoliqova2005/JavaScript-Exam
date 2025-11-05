@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body class="bg-[#FBF8EC]">
-    <script src="../js/main.js"></script>
+    
 
     <header
       class="shadow-[2px_4px_8px_0px_#0000001A] z-1 fixed w-full bg-white"
@@ -16,7 +16,7 @@
         class="container mx-auto px-3 py-4 flex justify-between items-center"
       >
         <div class="flex items-center gap-5 md:gap-2 flex-1">
-          <a href="/index.html" class="flex items-center gap-2">
+          <a href="../index.html" class="flex items-center gap-2">
             <img
               src="../images/logo.png"
               alt="logo"
@@ -28,7 +28,7 @@
           </a>
 
           <a
-            href="/pages/category.html"
+            href="../pages/category.html"
             class="hidden md:flex items-center gap-1 md:gap-2 bg-[#70C05B] px-3 md:px-5 py-4 md:py-4 rounded-md"
           >
             <img
@@ -42,24 +42,6 @@
               Каталог
             </p>
           </a>
-
-          <!-- <div
-            class="flex items-center border border-[#70C05B] rounded-md max-w-[500px] md:max-w-[400px] lg:max-w-[340px] w-full xl:max-w-[560px]"
-          >
-            <input
-              type="text"
-              placeholder="Найти товар"
-              class="px-4 w-full py-4 text-xs text-md"
-            />
-            <button class="px-3">
-              <img
-                src="https://static.vecteezy.com/system/resources/thumbnails/009/652/218/small/magnifying-glass-icon-isolated-on-white-background-search-illustration-vector.jpg"
-                alt="search"
-                class="w-[60px]"
-              />
-            </button>
-          </div>
-        </div> -->
 
 
         <div class="p-[10px] flex items-center  rounded-md max-w-[900px] w-full md:max-w-[400px] lg:max-w-[340px] xl:max-w-[560px] top-0 z-1">
@@ -75,16 +57,13 @@
         <div
           class="hidden md:flex items-center gap-3 md:gap-5 text-[10px] sm:text-xs md:text-sm ml-3"
         >
-          <a href="/pages/izbrannoe.html" class="flex flex-col items-center">
-            <img
-              src="https://www.freeiconspng.com/uploads/like-outline-icon-png-22.png"
-              alt="favorites"
-              class="w-full w-5 h-5 md:w-6 md:h-6"
-            />
-            <p>Избранное</p>
-          </a>
 
-          <a href="/pages/vseproduct.html" class="flex flex-col items-center">
+          <a < href="../pages/izbrannoe.html" class="flex flex-col items-center relative">
+                <img src="https://www.freeiconspng.com/uploads/like-outline-icon-png-22.png" alt="favorites" class="w-full w-5 h-5 md:w-6 md:h-6">
+                <p > Избранное </p> <span id="like-badge" class="w-[20px] h-[20px] rounded-[50%] absolute top-[-13px] left-11 p-[4px] flex items-center justify-center text-white text-[15px] font-bold bg-[green]">0</span> 
+              </a>
+
+          <a href="../pages/vseproduct.html" class="flex flex-col items-center">
             <img
               src="https://cdn-icons-png.flaticon.com/512/814/814987.png"
               alt="orders"
@@ -93,17 +72,13 @@
             <p>Заказы</p>
           </a>
 
-          <a
-            href="../pages/korzina.html"
-            class="flex flex-col items-center relative"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/481/481384.png"
-              alt="basket"
-              class="w-full w-5 h-5 md:w-6 md:h-6"
-            />
-            <p>Корзина</p>
-          </a>
+
+
+          <p href="../pages/korzina.html" class="flex flex-col items-center relative">
+                <img src="https://cdn-icons-png.flaticon.com/512/481/481384.png" alt="basket" class= "w-full w-5 h-5 md:w-6 md:h-6">
+                Корзина <span id="badge" class="w-[20px] h-[20px] rounded-[50%] p-[4px] flex items-center justify-center absolute top-[-15px] left-9  text-white text-[15px] font-bold bg-[red]">0</span>
+              </a>
+              
 
           <div class="flex items-center gap-2">
             <img
@@ -129,7 +104,7 @@
 
         <main class="bg-[#FBF8EC]">
       <section>
-        <div class="container mx-auto pt-[120px]">
+        <div class="container mx-auto pt-[150px]">
           <div class="flex items-center gap-[20px]">
             <a href="../index.html">Главная</a>
             <img
@@ -163,9 +138,9 @@
           <div
             class="flex justify-between  max-[700px]:flex-col pt-[90px] w-full px-3 sm:px-4 py-4 gap-[30px]"
           >
-            <div class="w-[65%] max-[700px]:w-full flex flex-col gap-5">
+            <div class="cart-cards w-[65%] max-[700px]:w-full flex flex-col gap-5">
               <!-- card1 -->
-              <div
+              <!-- <div
                 class="bg-white w-full rounded-lg p-2 max-[700px]:gap-5 shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75] mb-2 flex justify-between max-[700px]:flex-col px-5 items-center max-w-[876px] transition-transform duration-500 hover:scale-105"
               >
                 <div class="flex gap-5 items-center w-full">
@@ -214,10 +189,10 @@
                     89,00 ₽
                   </p>
                 </div>
-              </div>
+              </div> -->
 
               <!-- card 2  -->
-              <div
+              <!-- <div
                 class="bg-white w-full rounded-lg p-2 gap-3 max-[700px]:gap-5 shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75] mb-2 flex justify-between max-[700px]:flex-col px-5 items-center max-w-[876px] transition-transform duration-500 hover:scale-105"
               >
                 <div class="flex gap-5 items-center w-full">
@@ -274,13 +249,12 @@
                     89,00 ₽
                   </p>
                 </div>
-              </div>
+              </div> -->
 
               <!-- card 3  -->
 
 
-
-                            <div
+                            <!-- <div
                 class="bg-white w-full rounded-lg p-2 max-[700px]:gap-5 shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75] mb-2 flex justify-between max-[700px]:flex-col px-5 items-center max-w-[876px] transition-transform duration-500 hover:scale-105"
               >
                 <div class="flex gap-5 items-center w-full">
@@ -328,11 +302,11 @@
                     89,00 ₽
                   </p>
                 </div>
-              </div>
+              </div> -->
 
               <!-- card 4  -->
 
-              <div
+              <!-- <div
                 class="bg-white opacity-50 w-full rounded-lg p-2 max-[700px]:gap-5  shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75] mb-2 flex justify-between max-[700px]:flex-col px-5 max-w-[876px] transition-transform duration-500 hover:scale-105"
               >
                 <div class="flex gap-5 items-center w-full">
@@ -363,7 +337,7 @@
                 <p>Нет в наличии</p>
 
                 </div>
-              </div>
+              </div> -->
 
             </div>
 
@@ -466,5 +440,7 @@
 
  <script src="../products-data.js"></script>
  <script src="../js/search.js"></script>
+ <script src="../js/korzina.js"></script>
+ <script src="../js/main.js"></script>
   </body>
 </html>
