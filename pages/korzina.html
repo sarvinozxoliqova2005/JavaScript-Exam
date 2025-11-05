@@ -128,10 +128,10 @@
               <label
                 class="gap-[20px] cursor-pointer select-none flex items-center"
               >
-                <input type="checkbox" class="w-[30px] h-[24px] bg-[#70C05B]" />
-                <span class="font-bold">Выделить всё</span>
+                <input id = all-input type="checkbox" class="w-[30px] h-[24px] bg-[#70C05B] cursor-pointer" />
+                <label for = "all-input" class=" font-bold cursor-pointer">Выделить всё</label>
               </label>
-              <h1 class="text-[#FF6633] font-bold">Удалить выбранные</h1>
+              <h1 id="checked-all" class="text-[#FF6633] font-bold cursor-pointer">Удалить выбранные</h1>
             </div>
           </div>
 
@@ -140,8 +140,8 @@
           >
             <div class="cart-cards w-[65%] max-[700px]:w-full flex flex-col gap-5">
               <!-- card1 -->
-              <!-- <div
-                class="bg-white w-full rounded-lg p-2 max-[700px]:gap-5 shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75] mb-2 flex justify-between max-[700px]:flex-col px-5 items-center max-w-[876px] transition-transform duration-500 hover:scale-105"
+        
+                <!-- <div class="bg-white w-full rounded-lg p-2 max-[700px]:gap-5 shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75] mb-2 flex justify-between max-[700px]:flex-col px-5 items-center max-w-[876px] transition-transform duration-500 hover:scale-105"
               >
                 <div class="flex gap-5 items-center w-full">
                   <div class="relative">
@@ -189,7 +189,7 @@
                     89,00 ₽
                   </p>
                 </div>
-              </div> -->
+              </div>  -->
 
               <!-- card 2  -->
               <!-- <div
@@ -343,7 +343,7 @@
 
             <!-- Right   -->
 
-            <div class="w-[30%] max-[700px]:w-[100%]">
+            <div id="all-prices" class="w-[30%] max-[700px]:w-[100%]">
               <div>
                 <a class="flex items-center" href="">
                   <input class="w-[90px] h-[30px]" type="checkbox" />
@@ -354,21 +354,22 @@
 
 
                             <div class="mx-auto">
-                <div class="flex items-center gap-[90px] mb-3 mt-[90px]">
-                  <span class="text-[#8F8F8F] font-semibold">3 товара</span>
-                  <span class="font-semibold">258,10 ₽ </span>
+                <div class="flex items-center gap-[130px]  mb-3 mt-[90px]">
+                  <span class="text-[#8F8F8F] font-semibold">товара:</span>
+                  <span id="all-price" class="font-semibold">258,10 ₽</span>
+                  
                 </div>
 
-                <div class="flex items-center gap-[105px] mt-[20px]">
+                <div class="flex items-center gap-[125px] mt-[20px]">
                   <span class="text-[#8F8F8F]">Скидка</span>
-                  <span class="text-[#FF6633] font-bold text-[20px]"
+                  <span id="all-discount" class="text-[#FF6633] font-bold text-[20px]"
                     >-8,01 ₽
                   </span>
                 </div>
 
-                <div class="flex items-center gap-[100px] mt-[50px]">
+                <div class="flex items-center gap-[150px] mt-[50px]">
                   <span class="text-[#8F8F8F]">Итог</span>
-                  <span class="text-[24px] text-[#414141] font-bold"
+                  <span id="all-paid" class="text-[24px] text-[#414141] font-bold"
                     >250,09 ₽
                   </span>
                 </div>
@@ -441,6 +442,5 @@
  <script src="../products-data.js"></script>
  <script src="../js/search.js"></script>
  <script src="../js/korzina.js"></script>
- <script src="../js/main.js"></script>
   </body>
 </html>
