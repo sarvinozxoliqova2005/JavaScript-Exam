@@ -1,5 +1,6 @@
-let allChecked = document.getElementById ("checked-all")
-
+let allChecked = document.getElementById ("checked-all");
+let allInput = document.getElementById ("all-input");
+let inputCheck = document.getElementsByClassName ("input-check")
 let cartCards = document.querySelector (".cart-cards");
 let allPrice = document.getElementById ("all-price");
 let allDiscount = document.getElementById ("all-discount");
@@ -8,6 +9,7 @@ let sumPrice = 0;
 let discountPrice = 0;
 let paidPrice = 0;
 allPrice.textContent = sumPrice;
+let allCheckedProducts = [];
 allDiscount.textContent = discountPrice;
 allPaid.textContent = paidPrice
 
@@ -27,7 +29,7 @@ badge.textContent = cart.length;
          <div
                 class="bg-white w-full rounded-lg p-2 gap-3 max-[700px]:gap-5 shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75] mb-2 flex justify-between max-[700px]:flex-col px-5 items-center max-w-[876px] transition-transform duration-500 hover:scale-105"
               >
-                <div class="flex gap-5 items-center w-full">
+                <div class="flex gap-8 items-center w-full">
                   <div class="relative">
                     <img
                       class="rounded-lg object-cover w-[80px] h-[60px]"
@@ -35,9 +37,9 @@ badge.textContent = cart.length;
                       alt=""
                     />
 
-                    <input
+                    <input 
                     onClick = "checkedInput(this, ${el.id})"
-                      class="absolute top-[-8px] left-[-2px] w-[25px] h-[25px] cursor-pointer border border-gray-400 rounded"
+                      class=" input-check absolute top-[-8px] left-[-2px] w-[25px] h-[25px] cursor-pointer border border-gray-400 rounded"
                       type="checkbox"
                     />
                   </div>
@@ -58,7 +60,7 @@ badge.textContent = cart.length;
 
                 
                 <div
-                  class="flex max-[700px]:w-full gap-5 items-center min-[900px]:flex-row min-[700px]:flex-col max-[700px]:justify-between"
+                  class="flex max-[700px]:w-full  items-center min-[900px]:flex-row min-[700px]:flex-col max-[700px]:justify-between"
                 >
                   <div class="cursor-pointer w-[200px] flex gap-[5px]">
                     <button
@@ -147,9 +149,43 @@ countPrices()
 
 
 function checkInput (obj , id) {
+  let item = cart.find((el) => el.id === id);
+  console.log(obj.checked);
+  
 
+  if (obj.checked === true ){
+   allCheckedProducts.push(id)
+  }else {
+    allCheckedProducts = allCheckedProducts.filter((el) => el.id !== id)
+  }
+  console.log(allCheckedProducts);
+  
 }
 
 allChecked.addEventListener ("click" , function(){
+  cart = cart.filter((el) => !allCheckedProducts.includes(el.id));
+  allCheckedProducts = [];
+  
+   localStorage.setItem ("carts" , JSON.stringify(cart)) ;
+   showCartProducts (cartCards , cart) ;
+   localStorage.setItem ("carts" , JSON.stringify(cart));
+   countPrices()
+badge.textContent = cart.length;
+allInput.checked = false;
+});
 
-})
+allInput.addEventListener ("click" , function() {
+  if (allCheckedProducts.length === cart.length) {
+    allCheckedProducts = [];
+    for (let el of inputCheck) {
+      el.checked = false;
+    }
+  } else {
+    for (let el of inputCheck) {
+      el.checked = true;
+    }
+    cart.map ((el) => {
+      allCheckedProducts.push (el.id);
+    });
+  };
+});

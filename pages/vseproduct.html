@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>   
+</head>
+<body class="bg-[#FBF8EC]">
+
+     <header
+      class="shadow-[2px_4px_8px_0px_#0000001A] z-1 fixed w-full bg-white"
+    >
+      <nav
+        class="container mx-auto px-3 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-5 md:gap-2 flex-1">
+          <a href="../index.html" class="flex items-center gap-2">
+            <img
+              src="../images/logo.png"
+              alt="logo"
+              class="w-full w-8 h-8 md:w-10 md:h-10"
+            />
+            <p class="hidden lg:block font-bold uppercase text-sm lg:text-base">
+              Северяночка
+            </p>
+          </a>
+
+          <a
+            href="../pages/category.html"
+            class="hidden md:flex items-center gap-1 md:gap-2 bg-[#70C05B] px-3 md:px-5 py-4 md:py-4 rounded-md"
+          >
+            <img
+              src="https://cdn0.iconfinder.com/data/icons/user-interface-151/24/List_menu_toggle-512.png"
+              alt="menu"
+              class="w-full w-5 h-5"
+            />
+            <p
+              class="hidden lg:block text-white text-xs lg:text-sm font-medium"
+            >
+              Каталог
+            </p>
+          </a>
+
+
+        <div class="p-[10px] flex items-center  rounded-md max-w-[900px] w-full md:max-w-[400px] lg:max-w-[340px] xl:max-w-[560px] top-0 z-1">
+                <di class="max-w-[700px] relative w-full border-[#70C05B]  border-[2px] rounded-[10px] outline-none">
+                    <input id="searchInput" class="w-full h-full p-[20px] outline-none text-[#8F8F8F]" type="Mahsulotlarni qidirish" placeholder="Найти товар">
+                    <div id="searchCards" class="w-full hidden overflow-y-scroll flex flex-col gap-[10px] top-[80px] absolute max-h-[300px] bg-[white] shadow-lg rounded-[20px] p-[20px]">
+                    </div>
+                </div>
+
+            </div>
+
+
+        <div
+          class="hidden md:flex items-center gap-3 md:gap-5 text-[10px] sm:text-xs md:text-sm ml-3"
+        >
+
+          <a < href="../pages/izbrannoe.html" class="flex flex-col items-center relative">
+                <img src="https://www.freeiconspng.com/uploads/like-outline-icon-png-22.png" alt="favorites" class="w-full w-5 h-5 md:w-6 md:h-6">
+                <p > Избранное </p> <span id="like-badge" class="w-[20px] h-[20px] rounded-[50%] absolute top-[-13px] left-14 p-[4px] flex items-center justify-center text-white text-[16px] font-bold bg-[green]">0</span> 
+              </a>
+
+          <a href="../pages/vseproduct.html" class="flex flex-col items-center">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/814/814987.png"
+              alt="orders"
+              class="w-full w-5 h-5 md:w-6 md:h-6"
+            />
+            <p>Заказы</p>
+          </a>
+
+
+
+          <a href="../pages/korzina.html" class="flex flex-col items-center relative">
+                <img src="https://cdn-icons-png.flaticon.com/512/481/481384.png" alt="basket" class= "w-full w-5 h-5 md:w-6 md:h-6">
+                Корзина <span id="badge" class="w-[20px] h-[20px] rounded-[50%] p-[4px] flex items-center justify-center absolute top-[-15px] left-12  text-white text-[16px] font-bold bg-[red]">0</span>
+              </a>
+              
+
+          <div class="flex items-center gap-2">
+            <img
+              src="../images/avatar.png"
+              alt="Avatar"
+              class="w-full w-6 h-6 md:w-8 md:h-8 rounded-full object-cover"
+            />
+
+            <select
+              id="Алексей"
+              class="hidden lg:block bg-transparent border-none text-gray-800 font-medium cursor-pointer"
+            >
+              <option value="Алексей">Алексей</option>
+              <option value="Иван">Иван</option>
+              <option value="Мария">Мария</option>
+              <option value="Выход">Выход</option>
+            </select>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+    <main>
+       <section>
+        <div class="container mx-auto pt-[150px]">
+          <div class="flex items-center gap-[20px] max-[1200px]:flex-col max-[900px]:flex-col max-[640px]:flex-col ">
+            <a href="../index.html">Главная</a>
+            <img
+              class="w-[10px]"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJUAAACUCAMAAACtIJvYAAAAZlBMVEX///8AAADu7u7x8fHMzMz39/fq6upRUVEgICBNTU2JiYlBQUFEREQWFhba2tqCgoJ6eno1NTV0dHQbGxteXl5WVlYsLCxvb287OzvCwsIMDAxjY2PU1NSmpqZqamqdnZ2zs7OSkpLVOdzkAAACbklEQVR4nO2cXXOCMBBFAwiofFRrpdZibf//n+wwKKKQXPLCXWb2Pvtw5rCJIVlizMTU2+xcHC/J1N/PkfgnaFNd2SiPlFXQ5Z0Nc09yCnr5ZOO0qavgKSJsPZsSYqusXqEE2AqzIRTdVnwcg2Lb+hqHImMNKl3CQwzXVqpgR6MqCzsV7yE6qWi2XE+QaGvvpGLZ+nVTkbCijUisxF1ZLKzaOQxpWOVBJBa09UbBEmprhbBItmSW/ApNECRbZ7U1PSWgImGpLZ+oLZ9AW1sKltryCbQldJbn2Kq1tjyitnyitnyitryw1JYPltrywVJbPlhqywcL2SJhof0ttdXHkmnLerxJtoU2Kf8oWEu1pbXVy1JHIqfkl1pbJFvouEBt9QL/qi8ULGiL00mJbP1QqFAbxJpDBUZiUZKw3LZWHCh3c0ZRU6Ci0R7FLoeQAZWA+T1lQIW5G4pSVonEdQM0lcbzQ8HWqG8C1HiHcC8bhqmRXmo1NRaRpsCMrqa6QFO5mmoDR5+aukWmKfuHDG0+1FQbkaYiBKWmbokRVMYwhQpdZE3JNBXNDyVzlYBesSimJM5T8GX0KNEUY40eom+aGKZi8FWamroHmsoJUGpqapZpasOYPJGplLBpLdNUiqAkmkolmsrVVBuZNQXXUxJNUWoK7g4ToESagu99jNEXI1OZSFOMQrfcc9PlJHH0MUyZHYDaM6BQHw7FlAFLT4opk7hbLTmmwDUWHFOgrEim3LdFVCwoY+wHbDRTxjFdEU3ZL3VimjK2Trg1F8qYizxTTa4DqIKwyBvk1ZYAU02ebR0kmGpykWeqyaPfeZazmX8MRSY9cwBa8QAAAABJRU5ErkJggg=="
+              alt=""
+            />
+            <a class="text-[#414141]" href="../pages/category.html">Каталог              
+            </a>
+
+           <img
+              class="w-[10px]"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJUAAACUCAMAAACtIJvYAAAAZlBMVEX///8AAADu7u7x8fHMzMz39/fq6upRUVEgICBNTU2JiYlBQUFEREQWFhba2tqCgoJ6eno1NTV0dHQbGxteXl5WVlYsLCxvb287OzvCwsIMDAxjY2PU1NSmpqZqamqdnZ2zs7OSkpLVOdzkAAACbklEQVR4nO2cXXOCMBBFAwiofFRrpdZibf//n+wwKKKQXPLCXWb2Pvtw5rCJIVlizMTU2+xcHC/J1N/PkfgnaFNd2SiPlFXQ5Z0Nc09yCnr5ZOO0qavgKSJsPZsSYqusXqEE2AqzIRTdVnwcg2Lb+hqHImMNKl3CQwzXVqpgR6MqCzsV7yE6qWi2XE+QaGvvpGLZ+nVTkbCijUisxF1ZLKzaOQxpWOVBJBa09UbBEmprhbBItmSW/ApNECRbZ7U1PSWgImGpLZ+oLZ9AW1sKltryCbQldJbn2Kq1tjyitnyitnyitryw1JYPltrywVJbPlhqywcL2SJhof0ttdXHkmnLerxJtoU2Kf8oWEu1pbXVy1JHIqfkl1pbJFvouEBt9QL/qi8ULGiL00mJbP1QqFAbxJpDBUZiUZKw3LZWHCh3c0ZRU6Ci0R7FLoeQAZWA+T1lQIW5G4pSVonEdQM0lcbzQ8HWqG8C1HiHcC8bhqmRXmo1NRaRpsCMrqa6QFO5mmoDR5+aukWmKfuHDG0+1FQbkaYiBKWmbokRVMYwhQpdZE3JNBXNDyVzlYBesSimJM5T8GX0KNEUY40eom+aGKZi8FWamroHmsoJUGpqapZpasOYPJGplLBpLdNUiqAkmkolmsrVVBuZNQXXUxJNUWoK7g4ToESagu99jNEXI1OZSFOMQrfcc9PlJHH0MUyZHYDaM6BQHw7FlAFLT4opk7hbLTmmwDUWHFOgrEim3LdFVCwoY+wHbDRTxjFdEU3ZL3VimjK2Trg1F8qYizxTTa4DqIKwyBvk1ZYAU02ebR0kmGpykWeqyaPfeZazmX8MRSY9cwBa8QAAAABJRU5ErkJggg=="
+              alt=""
+            />
+
+            <a class="text-[#414141]" href="#">Молоко, сыр, яйцо             
+            </a>
+
+            <img
+              class="w-[10px]"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJUAAACUCAMAAACtIJvYAAAAZlBMVEX///8AAADu7u7x8fHMzMz39/fq6upRUVEgICBNTU2JiYlBQUFEREQWFhba2tqCgoJ6eno1NTV0dHQbGxteXl5WVlYsLCxvb287OzvCwsIMDAxjY2PU1NSmpqZqamqdnZ2zs7OSkpLVOdzkAAACbklEQVR4nO2cXXOCMBBFAwiofFRrpdZibf//n+wwKKKQXPLCXWb2Pvtw5rCJIVlizMTU2+xcHC/J1N/PkfgnaFNd2SiPlFXQ5Z0Nc09yCnr5ZOO0qavgKSJsPZsSYqusXqEE2AqzIRTdVnwcg2Lb+hqHImMNKl3CQwzXVqpgR6MqCzsV7yE6qWi2XE+QaGvvpGLZ+nVTkbCijUisxF1ZLKzaOQxpWOVBJBa09UbBEmprhbBItmSW/ApNECRbZ7U1PSWgImGpLZ+oLZ9AW1sKltryCbQldJbn2Kq1tjyitnyitnyitryw1JYPltrywVJbPlhqywcL2SJhof0ttdXHkmnLerxJtoU2Kf8oWEu1pbXVy1JHIqfkl1pbJFvouEBt9QL/qi8ULGiL00mJbP1QqFAbxJpDBUZiUZKw3LZWHCh3c0ZRU6Ci0R7FLoeQAZWA+T1lQIW5G4pSVonEdQM0lcbzQ8HWqG8C1HiHcC8bhqmRXmo1NRaRpsCMrqa6QFO5mmoDR5+aukWmKfuHDG0+1FQbkaYiBKWmbokRVMYwhQpdZE3JNBXNDyVzlYBesSimJM5T8GX0KNEUY40eom+aGKZi8FWamroHmsoJUGpqapZpasOYPJGplLBpLdNUiqAkmkolmsrVVBuZNQXXUxJNUWoK7g4ToESagu99jNEXI1OZSFOMQrfcc9PlJHH0MUyZHYDaM6BQHw7FlAFLT4opk7hbLTmmwDUWHFOgrEim3LdFVCwoY+wHbDRTxjFdEU3ZL3VimjK2Trg1F8qYizxTTa4DqIKwyBvk1ZYAU02ebR0kmGpykWeqyaPfeZazmX8MRSY9cwBa8QAAAABJRU5ErkJggg=="
+              alt=""
+            />
+
+            <a class="text-[#8F8F8F] max-[700px]:text-[14px]" href="#">Масло ПРОСТОКВАШИНО сливочное в/с 82% фольга без змж, Россия, 180 г          
+            </a>
+          </div>
+        </div>
+      </section>
+
+
+      <section>
+        <div class="container mx-auto py-[90px]">
+          <div>
+            <h1 class="text-[40px] font-bold font-[rubik] max-[1024px]:text-[36px] max-[900px]:text-[32px] max-[700px]:text-[24px] ">Масло ПРОСТОКВАШИНО сливочное в/с 82% фольга без змж, Россия, 180 г</h1>
+          </div>
+
+          <div class="flex gap-[30px] mt-[40px] w-full h-full max-[800px]:flex-col max-[800px]:items-center">
+            <a href="/">арт. 371431</a>
+          <a class="flex items-center gap-[5px] w-[190px]" href="/">
+          <img src="../assets/images/stars/star-full.png" alt="">
+          <img src="../assets/images/stars/star-full.png" alt="">          
+          <img src="../assets/images/stars/star-empty.png" alt="">
+          <img src="../assets/images/stars/star-empty.png" alt="">
+          <img src="../assets/images/stars/star-empty.png" alt="">
+          <h1>3 отзыва</h1>
+          </a>
+
+          <a href="">
+            <h1>Поделиться</h1>
+          </a>
+
+          <a class="flex gap-[10px] lg:col-span-2 w-[150px]" href="">
+            <img src="https://www.freeiconspng.com/uploads/like-outline-icon-png-22.png" alt="favorites" class=" w-5 h-5 md:w-6 md:h-6">
+            <h1>В избраное</h1>
+          </a>
+          </div>
+        </div>
+      </section>
+
+
+      <section>
+      <div id="single-page" class="container mx-auto py-[40px]">
+          <!-- <div id="single-cards">
+          <div class="flex gap-[20px]">
+            <div class="flex flex-col gap-[5px]">
+              <img class="w-[90px] h-[90px] object-cover" src="../images/masla.png" alt="">
+              <img class="w-[90px] h-[90px] object-cover"  src="../images/masla.png" alt="">
+              <img class="w-[90px] h-[90px] object-cover"  src="../images/masla.png" alt="">
+              <img class="w-[90px] h-[90px] object-cover"  src="../images/masla.png" alt="">
+            </div>
+            <div>
+              <img class="max-w-[375px] w-full h-[375px] h-full object-cover"  src="../images/masla.png" alt="">
+            </div>
+          </div>
+        </div> -->
+
+        
+
+          <div id="single-products">
+          <!-- <div>
+            <div class="flex ">
+            <h1>Обычная цена</h1>
+            <h2>С картой Северяночки</h2>
+          </div>
+          <div class="flex ">
+             <img src="https://cdn-icons-png.flaticon.com/512/481/481384.png" alt="basket" class= "w-full w-5 h-5 md:w-6 md:h-6">
+             <button>В корзину</button>
+          </div>
+          
+          <div class="flex">
+            <h1>Бренд</h1>
+            <h2>ПРОСТОКВАШИНО</h2>
+          </div>
+          <div class="flex ">
+            <h1>Страна производителя</h1>
+            <h2>Россия</h2>
+          </div>
+          <div class="flex ">
+            <h1>Упаковка</h1>
+            <h2>180 г</h2>
+          </div>
+      </div> -->
+          </div>
+        </div>
+
+      </div>
+      </section>
+
+
+      <section>
+            <div class="container mx-auto py-[90px]">
+                <div class="flex items-center justify-between mx-auto max-w-7xl">
+                    <h1 class="text-[36px] font-[700]">Акции</h1>
+                <a class="flex items-center gap-[10px]" href="">
+                    <h1 class="text-[#606060]">Все продукты</h1>
+                </a>
+                </div>
+
+                <div class="cardlar grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 2xl:px-[127px]   gap-[30px] flex items-center justify-center">
+
+
+                <!-- <div class="max-w-[80%] h-[91%] rounded-[4px] bg-[white] mt-[10px] transition-transform duration-500 hover:scale-110">
+                    <img class="max-w-[100%] h-[190px] mx-auto" src="./images/moloko.png" alt="">
+                    <p class=" relative bottom-10 ml-[25px]  max-w-[70px] h-[36px] rounded-[4px] bg-[#FF6633] text-white flex items-center justify-center transition-transform duration-500 hover:scale-110">-50%</p>
+                    <a class="flex items-center justify-between" href="">
+                        <img class="max-w-[71px] h-[27px] ml-[20px]" src="./images/44,50.png" alt="">
+                        <img class="max-w-[69px] h-[24px] mr-[20px]" src="./images/50,50.png" alt="">
+                    </a>
+
+                    <a class="flex items-center justify-between mt-[10px]" href="">
+                        <h1 class="text-[18px] font-[rubik] font-[400] text-[#BFBFBF] ml-[20px]">С картой</h1>
+                        <h2 class="text-[18px] font-[rubik] font-[400] text-[#BFBFBF] ml-[20px] mr-[20px]">Обычная</h2>
+                    </a>
+
+                    <h1 class="font-[rubik] leading-[150%] font-[700] text-[#414141] mt-[10px] ml-[20px]">Молоко ПРОСТОКВАШИНО паст. <br> питьевое цельное отборное...</h1>
+
+                    <img class="mt-[20px] ml-[20px] max-w-[300px] h-[20px]" src="./images/star2.png" alt="">
+
+                    <button class="mx-auto block w-[290px] md:w-auto px-23 text-[20px] h-[40px] rounded-[5px] border border-[#70C05B] hover:bg-[#70C05B] hover:text-[white] font-[rubik] font-[400] text-[#70C05B] cursor-pointer mt-[20px] hover:bg-[#FF6633] hover:border-[#FF6633]">В корзину</button> 
+                </div>
+
+
+                <div class="max-w-[80%] h-[91%] rounded-[4px] bg-[white] mt-[10px] transition-transform duration-500 hover:scale-110">
+            
+                    <img class="max-w-[85%] h-[182px] mx-auto" src="./images/gosht.png" alt="">
+                    <p class=" relative bottom-10 ml-[15px]  w-[70px] h-[36px] rounded-[4px] bg-[#FF6633] text-white flex items-center justify-center transition-transform duration-500 hover:scale-110">-50%</p>
+                    <a class="flex items-center justify-between mt-[10px]" href="">
+                        <img class="max-w-[71px] h-[27px] ml-[20px]" src="./images/44,50.png" alt="">
+                        <img class="max-w-[69px] h-[24px] mr-[20px]" src="./images/50,50.png" alt="">
+                    </a>
+
+                    <a class="flex items-center justify-between mt-[10px]" href="">
+                        <h1 class="text-[18px] font-[rubik] font-[400] text-[#BFBFBF] ml-[20px]">С картой</h1>
+                        <h2 class="text-[18px] font-[rubik] font-[400] text-[#BFBFBF] ml-[20px] mr-[20px]">Обычная</h2>
+                    </a>
+
+                    <h1 class="font-[rubik] leading-[150%] font-[700] text-[#414141] mt-[10px] ml-[20px]">Колбаса сырокопченая МЯСНАЯ <br> ИСТОРИЯ  Сальчичон и Тоскан...</h1>
+
+                    <img class="mt-[20px] ml-[20px] max-w-[300px] h-[20px]" src="./images/star3.png" alt="">
+
+                    <button class="mx-auto block w-[290px] h-[40px] md:w-auto px-23 rounded-[5px] text-[20px] border border-[#70C05B] font-[rubik] font-[400] text-[#70C05B] cursor-pointer mt-[20px]  hover:border-[#FF6633] hover:bg-[#FF6633] hover:text-[white]">В корзину</button> 
+                </div>
+
+
+                <div class="max-w-[80%] h-[91%] rounded-[4px] bg-[white] mt-[10px] transition-transform duration-500 hover:scale-110">
+                    <img class="max-w-[100%] h-[180px] mx-auto" src="./images/sosiska.png" alt="">
+                    <p class=" relative bottom-10 ml-[5px]  max-w-[70px] h-[36px] rounded-[4px] bg-[#FF6633] text-white flex items-center justify-center transition-transform duration-500 hover:scale-110">-50%</p>
+                    <a class="flex items-center justify-between mt-[10px]" href="#">
+                        <img class="max-w-[71px] h-[27px] ml-[20px]" src="./images/44,50.png" alt="">
+                        <img class="max-w-[69px] h-[24px] mr-[20px]" src="./images/50,50.png" alt="">
+                    </a>
+
+                    <a class="flex items-center justify-between mt-[10px]" href="">
+                        <h1 class="text-[18px] font-[rubik] font-[400] text-[#BFBFBF] ml-[20px]">С картой</h1>
+                        <h2 class="text-[18px] font-[rubik] font-[400] text-[#BFBFBF] ml-[20px] mr-[20px]">Обычная</h2>
+                    </a>
+
+                    <h1 class="font-[rubik] leading-[150%] font-[700] text-[#414141] mt-[10px] ml-[20px]">Сосиски вареные МЯСНАЯ <br> ИСТОРИЯ Молочные и С сыро...</h1>
+
+                    <img class="mt-[20px] ml-[20px] max-w-[300px] h-[20px]" src="./images/star3.png" alt="">
+
+                    <button class="mx-auto block w-[290px] h-[40px] md:w-auto px-23 rounded-[5px] border border-[#70C05B] hover:bg-[#70C05B] hover:text-[white] font-[rubik] font-[400] text-[#70C05B] text-[20px] cursor-pointer mt-[20px] hover:border-[#FF6633] hover:bg-[#FF6633] ">В корзину</button> 
+                </div> -->
+                </div>
+            </div>
+        </section>
+
+          <section>
+            <div class="container mx-auto py-[90px]">
+                <div class="flex items-center justify-between max-w-7xl mx-auto">
+                    <h1 class="text-[36px] font-[700]">С этим товаров мокупают</h1>
+                <a class="flex items-center gap-[10px]" href="">
+                    <h1 class="text-[#606060]">Все продукты</h1>
+                </a>
+                </div>
+
+                <div class="NewProducts grid lg:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-[30px] flex items-center justify-center mx-auto max-w-7xl">
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="py-[90px] bg-[#FBF8EC]">
+    <div class="container mx-auto py-[90px]">
+
+        <div class="flex items-center justify-between max-[1050px]:gap-10 max-[1050px]:flex-col">
+            <img src="../images/logo.png" alt="">
+        
+            <div>
+                <ul class="flex items-center gap-[40px] max-[1050px]:flex-col">
+                <li>
+                    <a href="">О компании</a>
+                </li>
+                <li>
+                    <a href="">Контакты</a>
+                </li>
+                <li>
+                    <a href="">Вакансии</a>
+                </li>
+                <li>
+                    <a href="">Статьи</a>
+                </li>
+                <li>
+                    <a href="">Политика обработки персональных данных</a>
+                </li>
+            </ul>
+            </div>
+        
+
+    
+            <div>
+                <a class="flex items-center gap-[20px]" href="">
+                <img class="w-[40px] " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-js0W9HFrrqe6IlNrRgyjar4BKW7jIvokfQ&s" alt="">
+                <img class="w-[40px]" src="https://cdn-icons-png.flaticon.com/512/733/733583.png" alt="">
+                <img class="w-[40px]" src="https://cdn-icons-png.freepik.com/256/14047/14047486.png?semt=ais_white_label" alt="">
+                <img class="w-[40px]" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD-juPgT9sYYNeOTWa2dtcy_86xkWwKSG6rA&s" alt="">
+            </a>
+            </div>
+
+            <div>
+                <a class="flex items-center gap-[20px]" href="">
+                <img class="w-[40px]" src="https://st4.depositphotos.com/15317184/27028/v/450/depositphotos_270285308-stock-illustration-phone-and-call-line-icon.jpg" alt="">
+                <h1>8 800 777 33 33</h1>
+            </a>
+            </div>
+        </div>
+    </div>
+    </div>
+ </footer>
+    
+    
+    <script src="../index.html"></script>
+    <script src="../products-data.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/single.js"></script>
+</body>
+</html>

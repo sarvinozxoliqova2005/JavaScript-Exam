@@ -36,7 +36,7 @@
            <div  class="hidden md:flex items-center gap-3 md:gap-5 text-[10px] sm:text-xs md:text-sm ml-3">
               <a < href="/pages/izbrannoe.html" class="flex flex-col items-center relative">
                 <img src="https://www.freeiconspng.com/uploads/like-outline-icon-png-22.png" alt="favorites" class="w-full w-5 h-5 md:w-6 md:h-6">
-                <p > Избранное </p> <span id="like-badge" class="w-[25px] h-[25px] rounded-[50%] absolute top-[-8px] left-15 p-[4px] flex items-center justify-center text-white text-[20px] font-bold bg-[green]">0</span> 
+                <p > Избранное </p> <span id="like-badge" class="w-[20px] h-[20px] rounded-[50%] absolute top-[-12px] left-14 p-[4px] flex items-center justify-center text-white text-[16px] font-bold bg-[green]">0</span> 
               </a>
           
               <a href="/pages/vseproduct.html" class="flex flex-col items-center">
@@ -47,24 +47,36 @@
               
                 <a href="./pages/korzina.html" class="flex flex-col items-center relative">
                 <img src="https://cdn-icons-png.flaticon.com/512/481/481384.png" alt="basket" class= "w-full w-5 h-5 md:w-6 md:h-6">
-                Корзина <span id="badge" class="w-[25px] h-[25px] rounded-[50%] p-[4px] flex items-center justify-center absolute top-[-8px] left-13  text-white text-[20px] font-bold bg-[red]">0</span>
+                Корзина <span id="badge" class="w-[20px] h-[20px] rounded-[50%] p-[4px] flex items-center justify-center absolute top-[-15px] left-12  text-white text-[16px] font-bold bg-[red]">0</span>
               </a>
               
           
-              <div class="flex items-center gap-2">
-                <img src="../images/avatar.png" alt="Avatar" class="w-full w-6 h-6 md:w-8 md:h-8 rounded-full object-cover">
+              <div id="profile" class="flex items-center gap-2 cursor-pointer">
+                <img id="profile-img" src="../images/avatar.png" alt="Avatar" class="w-full w-6 h-6 md:w-8 md:h-8 rounded-full object-cover">
+                <h1 id="profile-title" class="hidden lg:block bg-transparent border-none text-gray-800 font-medium cursor-pointer">Алексей</h1>
                      
-                <select id="Алексей" class="hidden lg:block bg-transparent border-none text-gray-800 font-medium cursor-pointer">
+                <!-- <select  id="Алексей" class="hidden lg:block bg-transparent border-none text-gray-800 font-medium cursor-pointer">
                   <option value="Алексей">Алексей</option>
-                  <option value="Иван">Иван</option>
-                  <option value="Мария">Мария</option>
-                  <option value="Выход">Выход</option>
-                </select>
+                </select> -->
                 </div>              
             </div>
           </nav>
           
     </header>
+
+    <div id="form-modal" class="fixed hidden z-3 top-0 w-full h-full bg-[#FCD5BACC]/80 flex items-center justify-center">
+        <div id="inner-modal" class="bg-white max-w-[550px] w-full  p-[20px] rounded-[10px]">
+            <h1 class="text-[40px] font-bold font-[rubik] text-center py-[20px]">Вход</h1>
+            <form id="form" action="" class="flex flex-col gap-[20px]">
+               <input required class="input border-[3px] border-[#70C05B] rounded-[5px] p-[15px] font-bold" type="text" placeholder="PhotoUrl">
+               <input required class="input border-[3px] border-[#70C05B] rounded-[5px] p-[15px] font-bold" type="text" placeholder="FirstName">
+               <input required class="input border-[3px] border-[#70C05B] rounded-[5px] p-[15px] font-bold" type="text" placeholder="LastName">
+               <input required class="input border-[3px] border-[#70C05B] rounded-[5px] p-[15px] font-bold" type="text" placeholder="Phone Number">
+               <input required' class="input border-[3px] border-[#70C05B] rounded-[5px] p-[15px] font-bold" type="text" placeholder="Password">
+               <button type="submit" class="input bg-[#70C05B] text-[white] rounded-[5px] p-[15px] font-bold hover:bg-[#FCD5BA] hover:border-[#FCD5BA] hover:text-[#FF6633] text-[24px] font-bold font-[rubik] cursor-pointer hover:duration-500">Вход</button>
+            </form>
+        </div>
+    </div>
 
     <main class="bg-[#FBF8EC]">
 
@@ -72,7 +84,7 @@
             <div class="container mx-auto pt-[100px] max-w-8xl ">
                 <div class="grid md:grid-cols-2  flex items-center">
                     <img class="hidden lg:block" src="./images/home.png" alt="">
-                    <h1 class="text-[48px] md:text-center font-[700] items-center">Доставка бесплатно от 1000 ₽</h1>
+                    <h1 class="text-[48px] max-[640px]:text-center font-[700] items-center">Доставка бесплатно от 1000 ₽</h1>
                 </div>
             </div>
         </section>
@@ -359,6 +371,7 @@
 
 
 
+    
     <script src="./products-data.js"></script>
     <script src="./js/search.js"></script>
     <script src="./js/main.js"></script>

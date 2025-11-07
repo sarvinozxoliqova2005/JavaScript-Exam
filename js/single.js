@@ -1,45 +1,84 @@
+let path = new URLSearchParams(location.search);
+let id = path.get ("id");
+let singlePge = document.getElementById ("single-page");
+let singleProducts = document.getElementById ("single-products")
+let item = products.filter ((el) => el.id == id);
+
+item.map((el) => {
+    singlePge.innerHTML += `
+        <div id="single-cards">
+          <div class="flex max-[1326px]:flex-col gap-[15px]">
+          <div class="flex gap-[15px] ">
+            <div id= "change-images" class="flex flex-col gap-[5px] ">
+              <img class="max-w-[126px] h-[126px] object-cover" src="${el.images[0]}" alt="">
+              <img class="max-w-[126px] h-[126px] object-cover"  src="${el.images[1]}" alt="">
+              <img class="max-w-[126px] h-[126px] object-cover"  src="${el.images[2]}" alt="">
+              <img class="max-w-[126px] h-[126px] object-cover"  src="${el.images[3]}" alt="">
+            </div>
+            <div>
+              <img id= "main-image" class="max-w-[506px] w-full  min-h-[510px] object-cover"  src=${el.images[0]} alt="">
+            </div>
+            <div class= "top-2 text-white  relative flex items-center justify-center  left-[-90px] max-w-[65px] w-full  h-[45px] rounded-[5px] px-3 pt-2">
+            <h1 class= "bg-[#FF6633] absolute text-[30px] w-full h-full">${el.discount}%</h1>
+            </div>
+         </div>
+         </div>
+
+
+             
+        
+            <div class= "flex justify-between items-center">
+             <h1 class= "text-[36px] font-400 text-[#606060]">${el.price}₽</h1>
+             <h1 class= "font-bold text-[43px] ">${el.discount}₽</h1>
+             </div>
+            <div class="flex justify-between items-center gap-[300px]">
+            <h1 class= "text-[#BFBFBF] text-[12px]">Обычная цена</h1>
+            <h2 class= "text-[#BFBFBF] text-[12px]">С картой Северяночки</h2>
+        </div>
+        </div>
+
+
+          <div class="flex items-center mx-auto justify-center mt-[30px]  gap-[30px] max-w-[279px] w-full h-[60px] border-[2px] border-[#70C05B] text-[#70C05B] hover:bg-[#FF6633] hover:border-[#FF6633] hover:text-white transition-transform duration-500 hover:scale-105">
+             <img class= "w-[32px] h-[32px]  " src="https://cdn-icons-png.flaticon.com/512/481/481384.png" alt="basket" class= "w-full w-5 h-5 md:w-6 md:h-6">
+             <button
+             class= "text-[24px] font-[400] cursor-pointer  ">В корзину</button>
+          </div>
+          
+          <div class="flex items-center  gap-[200px] mt-[40px] w-[584px] max-w-full h-[26px] p-[4px] bg-[#F3F2F1]">
+            <h1 class= "text-[#565656] ">Бренд</h1>
+            <h2 class= "text-[#414141] font-bold">ПРОСТОКВАШИНО</h2>
+          </div>
+
+          <div class="flex items-center gap-[70px] mt-[20px]  w-[584px] max-w-full h-[26px] p-[4px]">
+            <h1>Страна производителя</h1>
+            <h2>Россия</h2>
+          </div>
+
+          <div class="flex items-center gap-[175px] mt-[20px] w-[584px] max-w-full h-[26px] p-[4px] bg-[#F3F2F1]">
+            <h1>Упаковка</h1>
+            <h2>180 г</h2>
+         </div>
+
+         </div>
+
+       `
+})
+
+
+let mainImage = document.getElementById ("main-image");
+let changeImages = document.getElementById ("change-images");
+changeImages.addEventListener ("click" , (e) => {
+   mainImage.src = e.target.src
+})
+
+
+
 let cardlar = document.querySelector (".cardlar");
 
 let cart = JSON.parse (localStorage.getItem ("carts") || "[]");
 let badge = document.getElementById ("badge");
 localStorage.setItem ("carts" , JSON.stringify(cart))
 badge.textContent = cart.length;
-
-
-
-let profileImg = document.getElementById ("profile-img");
-let profileTitle = document.getElementById ("profile-title");
-let profileObj = JSON.parse (localStorage.getItem ("profile") || "{}");
-profileImg.src = profileObj.PhotoUrl;
-profileTitle.textContent = profileObj.FirstName;
-let form = document.getElementById ("form");
-let innerModal = document.getElementById ("inner-modal");
-let formModal = document.getElementById ("form-modal");
-let profile = document.getElementById ("profile");
-profile.addEventListener ("click" , function() {
-   formModal.classList.remove ("hidden")
-})
-formModal.addEventListener ("click" , function(){
-   formModal.classList.add ("hidden")
-})
-innerModal.addEventListener ("click" , function (e) {
-   e.stopPropagation();
-})
-form.addEventListener ("submit" , function(e) {
-   e.preventDefault();
-   profileObj.PhotoUrl = e.terget[0].value;
-   profileObj.FirstName = e.terget[1].value;
-   profileObj.LastName = e.target[2].value;
-   profileObj.PhoneNumber = e.target[3].value
-   profileObj.password = e.terget[4].value;
-   profileImg.src = e.terget[0].value;
-   profileTitle.textContent = e.terget[1].value;
-   localStorage.setItem ("profile" , JSON.stringify (profileObj));
-   formModal.classList.add ("hidden");
-})
-   
-
-
 
 
 let likeBadge = document.getElementById ("like-badge");
@@ -60,6 +99,7 @@ let NewsliceProducts = products.slice(products.length-4 , products.length);
 
 let aksiyaProduct = products.filter ((el) => el.discount > 0);
 let proCard = aksiyaProduct.slice (aksiyaProduct.length - 4, aksiyaProduct.length);
+
 
 
 function showProducts (content , data) {
@@ -124,18 +164,6 @@ data.map ((el) => {
 showProducts (cardlar , proCard);
 showProducts (NewProducts , NewsliceProduct);
 showProducts (newpromise , NewsliceProducts);
-
-
-
-
-
-
-
-// let loading = document.getElementById("loading")
-// window.addEventListener ("load" , function() {
-//     loading.classList.add ("hidden")
-// })
-
 
 
 
