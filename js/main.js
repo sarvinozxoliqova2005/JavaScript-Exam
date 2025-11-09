@@ -66,7 +66,7 @@ function showProducts (content , data) {
    content.innerHTML = "";
 data.map ((el) => {
    content.innerHTML += `
-   <div class="ProductAksiya  relative w-[100%] max-[600px]:max-w-[350px]  h-[475px]  mt-[20px]  mb-3 rounded-[4px] bg-[white]  transition-transform duration-500 hover:scale-105 shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75]">
+   <div class="ProductAksiya  relative w-full overflow-y-hiddden max-w-[450px] h-[475px]  mt-[20px] mb-3 rounded-[4px] bg-[white]  transition-transform duration-500 hover:scale-105 shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75]">
    ${
       like.find((item) => item.id === el.id) ?  `
       <img 
@@ -98,7 +98,7 @@ data.map ((el) => {
                            cart.find((items) =>items.id === el.id)
                            
                            ? `
-                            <div class= "w-full  grid grid-cols-3 w-full px-3 pt-2 absolute left-0 bottom-2 ">
+                            <div class= "w-full  grid grid-cols-3  px-3 pt-2 absolute left-0 bottom-2 ">
                         <button
                           onClick = "decrease (${el.id})"
                         class= "bg-[red] p-[15px]  rounded-[5px] flex items-center justify-center text-white  text-[20px] font-bold  ">-</button>
@@ -131,10 +131,10 @@ showProducts (newpromise , NewsliceProducts);
 
 
 
-// let loading = document.getElementById("loading")
-// window.addEventListener ("load" , function() {
-//     loading.classList.add ("hidden")
-// })
+let loading = document.getElementById("loading")
+window.addEventListener ("load" , function() {
+    loading.classList.add ("hidden")
+})
 
 
 

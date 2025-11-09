@@ -6,7 +6,7 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>   
 </head>
-<body class="bg-[#FBF8EC]">
+<body class="bg-[#FBF8EC] overflow-x-hidden w-full">
 
      <header
       class="shadow-[2px_4px_8px_0px_#0000001A] z-1 fixed w-full bg-white"
@@ -101,17 +101,17 @@
     </header>
 
 
-    <main>
+    <main class="max-w-[100vw] overflow-x-hidden">
        <section>
-        <div class="container mx-auto pt-[150px]">
-          <div class="flex items-center gap-[20px] max-[1200px]:flex-col max-[900px]:flex-col max-[640px]:flex-col ">
-            <a href="../index.html">Главная</a>
+        <div class="container mx-auto pt-[150px] ">
+          <div class="flex items-center gap-[20px] max-[700px]:flex-col">
+            <a class="max-[768px]:text-[12px] max-[360px]:text-[8px]" href="../index.html">Главная</a>
             <img
               class="w-[10px]"
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJUAAACUCAMAAACtIJvYAAAAZlBMVEX///8AAADu7u7x8fHMzMz39/fq6upRUVEgICBNTU2JiYlBQUFEREQWFhba2tqCgoJ6eno1NTV0dHQbGxteXl5WVlYsLCxvb287OzvCwsIMDAxjY2PU1NSmpqZqamqdnZ2zs7OSkpLVOdzkAAACbklEQVR4nO2cXXOCMBBFAwiofFRrpdZibf//n+wwKKKQXPLCXWb2Pvtw5rCJIVlizMTU2+xcHC/J1N/PkfgnaFNd2SiPlFXQ5Z0Nc09yCnr5ZOO0qavgKSJsPZsSYqusXqEE2AqzIRTdVnwcg2Lb+hqHImMNKl3CQwzXVqpgR6MqCzsV7yE6qWi2XE+QaGvvpGLZ+nVTkbCijUisxF1ZLKzaOQxpWOVBJBa09UbBEmprhbBItmSW/ApNECRbZ7U1PSWgImGpLZ+oLZ9AW1sKltryCbQldJbn2Kq1tjyitnyitnyitryw1JYPltrywVJbPlhqywcL2SJhof0ttdXHkmnLerxJtoU2Kf8oWEu1pbXVy1JHIqfkl1pbJFvouEBt9QL/qi8ULGiL00mJbP1QqFAbxJpDBUZiUZKw3LZWHCh3c0ZRU6Ci0R7FLoeQAZWA+T1lQIW5G4pSVonEdQM0lcbzQ8HWqG8C1HiHcC8bhqmRXmo1NRaRpsCMrqa6QFO5mmoDR5+aukWmKfuHDG0+1FQbkaYiBKWmbokRVMYwhQpdZE3JNBXNDyVzlYBesSimJM5T8GX0KNEUY40eom+aGKZi8FWamroHmsoJUGpqapZpasOYPJGplLBpLdNUiqAkmkolmsrVVBuZNQXXUxJNUWoK7g4ToESagu99jNEXI1OZSFOMQrfcc9PlJHH0MUyZHYDaM6BQHw7FlAFLT4opk7hbLTmmwDUWHFOgrEim3LdFVCwoY+wHbDRTxjFdEU3ZL3VimjK2Trg1F8qYizxTTa4DqIKwyBvk1ZYAU02ebR0kmGpykWeqyaPfeZazmX8MRSY9cwBa8QAAAABJRU5ErkJggg=="
               alt=""
             />
-            <a class="text-[#414141]" href="../pages/category.html">Каталог              
+            <a class="text-[#414141] max-[768px]:text-[12px] max-[360px]:text-[8px]" href="../pages/category.html">Каталог              
             </a>
 
            <img
@@ -120,7 +120,7 @@
               alt=""
             />
 
-            <a class="text-[#414141]" href="#">Молоко, сыр, яйцо             
+            <a class="text-[#414141] max-[768px]:text-[12px] max-[360px]:text-[8px] max-[768px]:flex-col max-[360px]:flex-col" href="#">Молоко, сыр, яйцо             
             </a>
 
             <img
@@ -129,7 +129,7 @@
               alt=""
             />
 
-            <a class="text-[#8F8F8F] max-[700px]:text-[14px]" href="#">Масло ПРОСТОКВАШИНО сливочное в/с 82% фольга без змж, Россия, 180 г          
+            <a class="text-[#8F8F8F] text-[24px] max-[768px]:text-[10px] max-[300px]:text-[8px] max-[300px]:text-center" href="#">Масло ПРОСТОКВАШИНО сливочное в/с 82% фольга без змж, Россия, 180 г          
             </a>
           </div>
         </div>
@@ -218,13 +218,13 @@
       <section>
             <div class="container mx-auto py-[90px]">
                 <div class="flex items-center justify-between mx-auto max-w-7xl">
-                    <h1 class="text-[36px] font-[700]">Акции</h1>
+                    <h1 class="text-[36px] font-[700] max-[600px]:text-[32px] max-[400px]:text-[18px] max-[300px]:text-[22px] max-[300px]:px-2">Акции</h1>
                 <a class="flex items-center gap-[10px]" href="">
-                    <h1 class="text-[#606060]">Все продукты</h1>
+                    <h1 class="text-[#606060] max-[400px]:px-2">Все продукты</h1>
                 </a>
                 </div>
 
-                <div class="cardlar grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 2xl:px-[127px]   gap-[30px] flex items-center justify-center">
+                <div class="cardlar grid lg:grid-cols-4 sm:grid-cols-2  max-w-[100vw] max-[300px]:px-2 md:grid-cols-3 2xl:px-[127px]   gap-[30px] flex items-center justify-center max-[300px]:px-2">
 
 
                 <!-- <div class="max-w-[80%] h-[91%] rounded-[4px] bg-[white] mt-[10px] transition-transform duration-500 hover:scale-110">
@@ -296,9 +296,9 @@
           <section>
             <div class="container mx-auto py-[90px]">
                 <div class="flex items-center justify-between max-w-7xl mx-auto">
-                    <h1 class="text-[36px] font-[700]">С этим товаров мокупают</h1>
+                    <h1 class="text-[36px] font-[700] max-[400px]:text-[20px] max-[300px]:text-[16px] max-[300px]:px-2">С этим товаров мокупают</h1>
                 <a class="flex items-center gap-[10px]" href="">
-                    <h1 class="text-[#606060]">Все продукты</h1>
+                    <h1 class="text-[#606060] max-[300px]:px-2">Все продукты</h1>
                 </a>
                 </div>
 

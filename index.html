@@ -6,8 +6,12 @@
     <title>Document</title>
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>   
 </head>
-<body>
+<body class="overflow-x-hidden w-full">
 
+
+    <div class="fixed z-2 left-0 top-0 flex items-center justify-center">
+        <img id="loading" src="./assets/images/loading/loading.mp4" alt="">
+    </div>
     
      <header class="shadow-[2px_4px_8px_0px_#0000001A] z-1 fixed w-full bg-white">
         <nav class="container mx-auto px-3 py-4 flex justify-between items-center">
@@ -55,9 +59,6 @@
                 <img id="profile-img" src="../images/avatar.png" alt="Avatar" class="w-full w-6 h-6 md:w-8 md:h-8 rounded-full object-cover">
                 <h1 id="profile-title" class="hidden lg:block bg-transparent border-none text-gray-800 font-medium cursor-pointer">Алексей</h1>
                      
-                <!-- <select  id="Алексей" class="hidden lg:block bg-transparent border-none text-gray-800 font-medium cursor-pointer">
-                  <option value="Алексей">Алексей</option>
-                </select> -->
                 </div>              
             </div>
           </nav>
@@ -78,13 +79,13 @@
         </div>
     </div>
 
-    <main class="bg-[#FBF8EC]">
+    <main class="bg-[#FBF8EC] max-w-[100vw] overflow-x-hidden">
 
         <section "">
             <div class="container mx-auto pt-[100px] max-w-8xl ">
-                <div class="grid md:grid-cols-2  flex items-center">
-                    <img class="hidden lg:block" src="./images/home.png" alt="">
-                    <h1 class="text-[48px] max-[640px]:text-center font-[700] items-center">Доставка бесплатно от 1000 ₽</h1>
+                <div class="grid lg:grid-cols-2  flex items-center ">
+                    <img class="hidden lg:block mt-[40px]" src="./images/home.png" alt="">
+                    <h1 class="text-[48px] max-[600px]:text-[32px] max-[300px]:text-[24px] max-[640px]:text-center font-[700] max-[852px]:text-center items-center mt-[30px]">Доставка бесплатно от 1000 ₽</h1>
                 </div>
             </div>
         </section>
@@ -92,13 +93,13 @@
         <section>
             <div class="container mx-auto py-[90px]">
                 <div class="flex items-center justify-between mx-auto max-w-7xl">
-                    <h1 class="text-[36px] font-[700]">Акции</h1>
+                    <h1 class="max-[600px]:text-[32px] max-[400px]:text-[28px] max-[300px]:text-[24px] text-[36px]  font-[700] max-[600px]:px-4 ">Акции</h1>
                 <a class="flex items-center gap-[10px]" href="">
-                    <h1 class="text-[#606060]">Все продукты</h1>
+                    <h1 class="text-[#606060] max-[600px]:px-4 ">Все продукты</h1>
                 </a>
                 </div>
 
-                <div class="cardlar grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 2xl:px-[127px]   gap-[30px] flex items-center justify-center">
+                <div class="cardlar grid lg:grid-cols-4  sm:grid-cols-3 2xl:px-[127px] px-2 gap-[30px] max-w-[100vw] flex items-center justify-center">
 
 
                 <!-- <div class="max-w-[80%] h-[91%] rounded-[4px] bg-[white] mt-[10px] transition-transform duration-500 hover:scale-110">
@@ -171,9 +172,9 @@
         <section>
             <div class="container mx-auto py-[90px]">
                 <div class="flex items-center justify-between max-w-7xl mx-auto">
-                    <h1 class="text-[36px] font-[700]">Новинки</h1>
+                    <h1 class="max-[300px]:text-[20px] max-[550px]:text-[18px] text-[36px] max-[600px]:px-4  font-[700]">Новинки</h1>
                 <a class="flex items-center gap-[10px]" href="">
-                    <h1 class="text-[#606060]">Все продукты</h1>
+                    <h1 class="text-[#606060] max-[300px]:px-1 max-[600px]:px-3">Все продукты</h1>
                 </a>
                 </div>
 
@@ -188,9 +189,9 @@
         <section>
             <div class="container mx-auto py-[90px]">
                  <div class="flex items-center justify-between mx-auto max-w-7xl">
-                    <h1 class="text-[36px] font-[700]">Покупали раньше</h1>
+                    <h1 class="max-[300px]:text-[14px] max-[500px]:text-[26px] max-[300px]:p-3  text-[36px] font-[700]">Покупали раньше</h1>
                 <a class="flex items-center gap-[10px]" href="">
-                    <h1 class="text-[#606060]">Все продукты</h1>
+                    <h1 class="text-[#606060] max-[300px]:p-3  max-[300px]:text-[16px]">Все продукты</h1>
                 </a>
                 </div>
 
@@ -205,27 +206,27 @@
 
         <section>
             <div class="container mx-auto py-[90px]">
-                <h1 class=" text-[36px] font-[700] max-w-7xl mx-auto">Специальные предложения</h1>
+                <h1 class=" text-[36px] max-[600px]:text-[28px] max-[300px]:text-[18px] px-3 font-[700] max-w-7xl mx-auto">Специальные предложения</h1>
 
                 <div class="gap-[60px] grid lg:grid-cols-2  md:grid-cols-1 mt-[40px] flex items-center justify-center max-w-7xl mx-auto">
 
-                    <div class="flex items-center gap-[30px]  w-[100%] h-[100%] rounded-[8px]  bg-[#CA936080] pl-[20px] transition-transform duration-500 hover:scale-110">
+                    <div class="flex items-center gap-[30px]  max-w-[670px] w-full max-[600px]:max-w-[600px] max-[300px]:max-w-[550px] max-h-[200px] h-full max-[600px]:h-[180px] max-[300px]:h-[150px] rounded-[8px]  bg-[#CA936080] pl-[20px] transition-transform duration-500 hover:scale-110">
                     <a href="">
-                        <h1 class="text-[28px] font-[700] leading-[150%]">Оформите карту <br> «Северяночка»</h1>
-                        <p class="font-[400] leading-[150%] text-[22px] text-[#414141] mt-[10px]">И получайте бонусы при покупке <br> в магазинах и на сайте</p>
+                        <h1 class="text-[28px] max-[600px]:text-[18px] max-[300px]:text-[14px] font-[700] leading-[150%]">Оформите карту <br> «Северяночка»</h1>
+                        <p class="font-[400] leading-[150%] text-[22px] max-[600px]:text-[16px] max-[300px]:text-[10px] text-[#414141] mt-[10px]">И получайте бонусы при покупке <br> в магазинах и на сайте</p>
                     </a>
 
-                     <img class="max-w-[100%]  h-[95px] rounded-[10px] rotate-15" src="./images/karta.jpg" alt="">
+                     <img class="max-w-[190px] w-full max-[1052px]:max-w-[170px] max-[600px]:max-w-[150px] max-[300px]:max-w-[120px]  h-[130px] max-[600px]:h-[110px] max-[300px]:h-[90px] rounded-[10px] rotate-15" src="./images/karta.jpg" alt="">
                 </div>
 
 
-                <div class="flex items-center gap-[30px] w-[100%] h-[100%] rounded-[8px]  bg-[#E5FFDE] pl-[50px] transition-transform duration-500 hover:scale-110">
+                <div class="flex items-center gap-[30px] max-w-[670px] w-full max-[600px]:max-w-[600px] max-[300px]:max-w-[550px] max-h-[200px] h-full max-[600px]:h-[180px] max-[300px]:h-[130px] rounded-[8px]  bg-[#E5FFDE] pl-[50px] transition-transform duration-500 hover:scale-110">
                     <a href="">
-                        <h1 class="text-[24px] font-[700] leading-[150%]">Покупайте <br> акционные товары</h1>
-                        <p class="font-[400] leading-[150%] text-[22px] text-[#414141] mt-[10px]">И получайте вдвое больше <br> бонусов</p>
+                        <h1 class="text-[24px] max-[1052px]:text-[20px] max-[600px]:text-[18px] max-[300px]:text-[16px] font-[700] leading-[150%]">Покупайте <br> акционные товары</h1>
+                        <p class="font-[400] leading-[150%] text-[22px] max-[1052px]:text-[18px] max-[600px]:text-[16px] max-[300px]:text-[10px]  text-[#414141] mt-[10px]">И получайте вдвое больше <br> бонусов</p>
                     </a>
 
-                     <img class="max-w-[100%] h-[170px] rounded-[10px] " src="./images/korzinka.png" alt="">
+                     <img class="max-w-[193px] max-[600px]:max-w-[140px] max-[300px]:max-w-[100px] w-full h-[186px] max-[600px]:h-[150px] max-[300px]:h-[100px] rounded-[10px] " src="./images/korzinka.png" alt="">
                 </div>
                 </div>
             </div>
@@ -236,11 +237,11 @@
 
         <section>
             <div class="container mx-auto py-[90px] px-[20px]">
-                <h1 class=" mb-[40px] text-[36px] text-[#414141] font-bold ">
+                <h1 class=" mb-[40px] text-[36px] max-[600px]:text-[26px] max-[300px]:text-[22px] text-[#414141] font-bold ">
                     Наши магазины
                 </h1>
 
-                <div class=" grid grid-cols-2 sm:grid-cols-4 max-w-[500px] w-full gap-[50px] ">
+                <div class=" grid grid-cols-2 sm:grid-cols-4 max-w-[500px]  w-full gap-[50px] ">
                     <a href="#" class="group mb-[10px] border border-[#70C05B] text-center w-[120px] cursor-pointer py-2 
                             hover:bg-[#70C05B] duration-500 hover:border-[#70C05B] rounded-md block">
                         <span class="text-[#70C05B] group-hover:text-white block">
@@ -274,7 +275,7 @@
                 <div class="">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95856.27875275856!2d69.08990621566772!3d41.341295333914104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8d041328b297%3A0x61846eff374bdec1!2sOqtepa%20Lavash%20%E2%80%93%20Nurafshon!5e0!3m2!1suz!2s!4v1760006557758!5m2!1suz!2s"
-                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        width="100%"  height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
         </section>
@@ -283,36 +284,36 @@
             <div class="container mx-auto pb-[200px]">
                 
                     <div class="flex items-center justify-between mx-auto max-w-7xl">
-                    <h1 class="text-[36px] font-[700]">Статьи</h1>
+                    <h1 class="text-[36px] max-[600px]:text-[26px] max-[300px]:text-[22px] font-[700]">Статьи</h1>
                 <a class="flex items-center gap-[10px]" href="">
                     <h1 class="md:block hidden text-[#606060]">Все продукты</h1>
                 </a>
                 </div>
                     
-                    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-[60px] mt-[60px] flex items-center justify-center mx-auto max-w-7xl">
-                        <div class="w-[100%] h-[100%] bg-[white]  flex flex-col justify-between h-full pb-[15px] transition-transform duration-500 hover:scale-110">
+                    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-[60px] mt-[60px] flex items-center justify-center mx-auto max-w-7xl px-2">
+                        <div class="max-w-[420px] w-full  max-[600px]:max-w-[400px] max-[300px]:max-w-[420px] h-[420px] h-full max-[600px]:h-[420px] max-[300px]:h-[450px] max-[350px]:h-[455px] bg-[white]  flex flex-col justify-between h-full pb-[15px] transition-transform duration-500 hover:scale-110">
                         <img class="max-w-[100%] h-[180px] object-cover " src="./images/rasm1.png" alt="">
-                        <b class="text-[20px] font-[400] text-[#8F8F8F] ml-[10px] mt-[10px]">05.03.2021</b>
-                        <h1 class="font-[700]  text-[22px] leading-[150%] mt-[10px] ml-[10px]">Режим использования масок и <br> перчаток на территории магазинов</h1>
-                        <p class="font-[400] leading-[150%] text-[22px] text-[#414141] mt-[10px] ml-[10px]">Подробная информация о режимах <br> использования масок и перчаток на <br> территории магазинов "ЛЕНТА". Информация <br> обновляется каждый будний день.</p>
-                        <button class="font-[400] text-[#70C05B] w-[200px] h-[40px] rounded-[5px] bg-[#E5FFDE] cursor-pointer mt-[15px] ml-[10px] hover:bg-[#70C05B] hover:text-[white]">Подробнее</button>
+                        <b class="text-[20px] max-[600px]:text-[16px] max-[300px]:text-[14px] font-[400] text-[#8F8F8F] ml-[10px] mt-[10px]">05.03.2021</b>
+                        <h1 class="font-[700]  text-[22px] max-[600px]:text-[18px] max-[300px]:text-[14px] leading-[150%] mt-[10px] ml-[10px]">Режим использования масок и <br> перчаток на территории магазинов</h1>
+                        <p class="font-[400] leading-[150%] text-[22px] max-[900px]:text-[20px] max-[600px]:text-[14px] max-[300px]:text-[12px] text-[#414141] mt-[10px] ml-[10px]">Подробная информация о режимах <br> использования масок и перчаток на <br> территории магазинов "ЛЕНТА". Информация <br> обновляется каждый будний день.</p>
+                        <button class="font-[400] text-[#70C05B] max-w-[200px] w-full   max-[500px]:max-w-[170px] max-[300px]:max-w-[130px] h-[40px] max-[500px]:h-[30px]  rounded-[5px] bg-[#E5FFDE] cursor-pointer mt-[15px] ml-[10px] hover:bg-[#70C05B] hover:text-[white]">Подробнее</button>
                     </div>
 
-                    <div class="w-[100%]] h-[100%] bg-[white] flex flex-col justify-between h-full pb-[13px] transition-transform duration-500 hover:scale-110">
+                    <div class="max-w-[400px] w-full  max-[300px]:max-w-[390px] h-[420px] h-full max-[600px]:h-[450px] max-[300px]:h-[420px] max-[300px]:h-[450px] max-[350px]:h-[455px] bg-[white] flex flex-col justify-between h-full pb-[13px] transition-transform duration-500 hover:scale-110">
                         <img class="max-w-[100%] h-[180px] object-cover" src="./images/rasm2.png" alt="">
-                        <b class="text-[20px] font-[400] text-[#8F8F8F] ml-[10px] mt-[10px]">05.03.2021</b>
-                        <h1 class="font-[700]  text-[22px] leading-[150%] mt-[10px] ml-[10px]">Весеннее настроение для каждой</h1>
-                        <p class="font-[400] leading-[150%] text-[20px] text-[#414141] mt-[10px] ml-[10px]">8 Марта – это не просто Международный <br> женский день, это ещё день тюльпанов, <br> приятных сюрпризов и праздничных тёплых <br> пожеланий.</p>
-                        <button class="font-[400] text-[#70C05B] w-[200px] h-[40px] rounded-[5px] bg-[#E5FFDE] cursor-pointer mt-[43px] ml-[10px] hover:bg-[#70C05B] hover:text-[white]">Подробнее</button>
+                        <b class="text-[20px] max-[600px]:text-[16px] max-[300px]:text-[14px]  font-[400] text-[#8F8F8F] ml-[10px] mt-[10px]">05.03.2021</b>
+                        <h1 class="font-[700]  text-[22px]  max-[600px]:text-[18px] max-[300px]:text-[14px] leading-[150%] mt-[10px] ml-[10px]">Весеннее настроение для каждой</h1>
+                        <p class="font-[400] leading-[150%] text-[20px] max-[900px]:text-[20px] max-[600px]:text-[14px] max-[300px]:text-[12px] text-[#414141] mt-[10px] ml-[10px]">8 Марта – это не просто Международный <br> женский день, это ещё день тюльпанов, <br> приятных сюрпризов и праздничных тёплых <br> пожеланий.</p>
+                        <button class="font-[400] text-[#70C05B] max-w-[200px] w-full max-[500px]:max-w-[170px] max-[300px]:max-w-[130px] h-[40px]  max-[600px]:h-[30px]  rounded-[5px] bg-[#E5FFDE] cursor-pointer mt-[43px] ml-[10px] hover:bg-[#70C05B] hover:text-[white]">Подробнее</button>
                     </div>
 
 
-                    <div class="w-[100%] h-[100%] bg-[white] flex flex-col justify-between h-full pb-[15px] transition-transform duration-500 hover:scale-110">
+                    <div class="max-w-[420px] w-full  max-[600px]:max-w-[400px] max-[300px]:max-w-[420px] h-[400px] h-full max-[600px]:h-[420px] max-[300px]:h-[410px] max-[300px]:h-[450px] max-[350px]:h-[455px] bg-[white]  flex flex-col justify-between h-full pb-[15px] transition-transform duration-500 hover:scale-110">
                         <img class="max-w-[100%] h-[180px] object-cover" src="./images/rasm3.png" alt="">
-                        <b class="text-[20px] font-[400] text-[#8F8F8F] ml-[10px] mt-[10px]">22.02.2020</b>
-                        <h1 class="font-[700]  text-[22px] leading-[150%] mt-[10px] ml-[10px]">ЗОЖ или ФАСТФУД. А вы на чьей <br> стороне? Голосуем!</h1>
-                        <p class="font-[400] leading-[150%] text-[18px] text-[#414141] mt-[10px] ml-[10px]">Голосуйте за любимые категории, выбирайте <br> категорию-победителя в мобильном <br> приложении и получайте кешбэк 10% <br> баллами в апреле!</p>
-                        <button class="font-[400] text-[#70C05B] w-[200px] h-[40px] rounded-[5px] bg-[#E5FFDE] cursor-pointer mt-[15px] ml-[10px] hover:bg-[#70C05B] hover:text-[white]">Подробнее</button>
+                        <b class="text-[20px] max-[600px]:text-[16px] max-[300px]:text-[14px]  font-[400] text-[#8F8F8F] ml-[10px] mt-[10px]">22.02.2020</b>
+                        <h1 class="font-[700]  text-[22px] max-[600px]:text-[18px] max-[300px]:text-[14px] leading-[150%] mt-[10px] ml-[10px]">ЗОЖ или ФАСТФУД. А вы на чьей <br> стороне? Голосуем!</h1>
+                        <p class="font-[400] leading-[150%] text-[20px] max-[900px]:text-[20px] max-[600px]:text-[14px] max-[300px]:text-[12px] text-[#414141] mt-[10px] ml-[10px]">Голосуйте за любимые категории, выбирайте <br> категорию-победителя в мобильном <br> приложении и получайте кешбэк 10% <br> баллами в апреле!</p>
+                        <button class="font-[400] text-[#70C05B] max-w-[200px]  max-w-[200px] w-full max-[500px]:max-w-[170px] max-[300px]:max-w-[130px] h-[40px]  max-[600px]:h-[30px]  rounded-[5px] bg-[#E5FFDE] cursor-pointer mt-[15px] ml-[10px] hover:bg-[#70C05B] hover:text-[white]">Подробнее</button>
                     </div>
                     </div>
             </div>

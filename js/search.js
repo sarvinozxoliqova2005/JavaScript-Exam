@@ -20,10 +20,10 @@ search.addEventListener("input" ,() => {
     searchedProducts.map ((el) => {
         searchCards.innerHTML += `
         <div class="flex items-center border-[2px] border-[green] rounded-[5px] gap-[10px] p-[20px]">
-                        <img class="w-[80px]" src="${el.images[0]}" alt="">
-                        <div class="flex flex-col justify-between">
+                        <img class="max-w-[80px] w-full max-[600px]:max-w-[60px] max-[300px]:max-w-[40px]" src="${el.images[0]}" alt="">
+                        <div class="flex flex-col justify-between  ">
                             <h1>${el.name}</h1>
-                            <p>${el.description}</p>
+                      <p>${el.description}</p>
                         </div>
                     </div>`
     }): searchCards.innerHTML = `

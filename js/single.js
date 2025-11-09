@@ -7,8 +7,8 @@ let item = products.filter ((el) => el.id == id);
 item.map((el) => {
     singlePge.innerHTML += `
         <div id="single-cards">
-          <div class="flex max-[1326px]:flex-col gap-[15px]">
-          <div class="flex gap-[15px] ">
+          <div class="flex  max-[1326px]:flex-col gap-[15px] ">
+          <div class="flex gap-[15px]">
             <div id= "change-images" class="flex flex-col gap-[5px] ">
               <img class="max-w-[126px] h-[126px] object-cover" src="${el.images[0]}" alt="">
               <img class="max-w-[126px] h-[126px] object-cover"  src="${el.images[1]}" alt="">
@@ -16,52 +16,53 @@ item.map((el) => {
               <img class="max-w-[126px] h-[126px] object-cover"  src="${el.images[3]}" alt="">
             </div>
             <div>
-              <img id= "main-image" class="max-w-[506px] w-full  min-h-[510px] object-cover"  src=${el.images[0]} alt="">
+              <img id= "main-image" class="max-w-[504px] h-[504px]  object-cover"  src=${el.images[0]} alt="">
             </div>
+          </div>
+
+
             <div class= "top-2 text-white  relative flex items-center justify-center  left-[-90px] max-w-[65px] w-full  h-[45px] rounded-[5px] px-3 pt-2">
             <h1 class= "bg-[#FF6633] absolute text-[30px] w-full h-full">${el.discount}%</h1>
             </div>
-         </div>
-         </div>
+            
 
-
-             
-        
-            <div class= "flex justify-between items-center">
-             <h1 class= "text-[36px] font-400 text-[#606060]">${el.price}₽</h1>
-             <h1 class= "font-bold text-[43px] ">${el.discount}₽</h1>
+             <div>
+            <div class= "flex justify-between items-center overflow-x-hidden w-full">
+             <h1 class= "text-[36px] font-400 text-[#606060] max-[768px]:text-[32px] max-[360px]:text-[24px]  max-[768px]:px-2  max-[360px]:px-2">${el.price}₽</h1>
+             <h1 class= "font-bold text-[43px] max-[768px]:text-[32px] max-[360px]:text-[24px]  max-[768px]:px-2  max-[360px]:px-2">${el.discount}₽</h1>
              </div>
             <div class="flex justify-between items-center gap-[300px]">
-            <h1 class= "text-[#BFBFBF] text-[12px]">Обычная цена</h1>
-            <h2 class= "text-[#BFBFBF] text-[12px]">С картой Северяночки</h2>
+            <h1 class= "text-[#BFBFBF] text-[12px]  max-[768px]:px-2  max-[360px]:px-2">Обычная цена</h1>
+            <h2 class= "text-[#BFBFBF] text-[12px]  max-[768px]:px-2  max-[400px]:px-2">С картой Северяночки</h2>
         </div>
-        </div>
+          <div 
 
-
-          <div class="flex items-center mx-auto justify-center mt-[30px]  gap-[30px] max-w-[279px] w-full h-[60px] border-[2px] border-[#70C05B] text-[#70C05B] hover:bg-[#FF6633] hover:border-[#FF6633] hover:text-white transition-transform duration-500 hover:scale-105">
+          
+        
+          <div class="flex items-center mx-auto justify-center mt-[30px]  gap-[30px] max-w-[279px] max-[600px]:w-[260px] w-full h-[60px] border-[2px] border-[#70C05B] text-[#70C05B] hover:bg-[#FF6633] hover:border-[#FF6633] hover:text-white transition-transform duration-500 hover:scale-105">
              <img class= "w-[32px] h-[32px]  " src="https://cdn-icons-png.flaticon.com/512/481/481384.png" alt="basket" class= "w-full w-5 h-5 md:w-6 md:h-6">
              <button
-             class= "text-[24px] font-[400] cursor-pointer  ">В корзину</button>
+             class= "text-[24px] font-[400] cursor-pointer   max-[768px]:px-2  max-[360px]:px-2">В корзину</button>
           </div>
           
-          <div class="flex items-center  gap-[200px] mt-[40px] w-[584px] max-w-full h-[26px] p-[4px] bg-[#F3F2F1]">
-            <h1 class= "text-[#565656] ">Бренд</h1>
-            <h2 class= "text-[#414141] font-bold">ПРОСТОКВАШИНО</h2>
+          <div class="flex items-center  gap-[200px] mt-[40px]  w-full h-[26px]  p-[4px] bg-[#F3F2F1]">
+            <h1 class= "text-[#565656]  max-[768px]:px-2  max-[300px]:px-2 max-[300px]:text-[8px] ">Бренд</h1>
+            <h2 class= "text-[#414141] font-bold max-[300px]:text-[8px]">ПРОСТОКВАШИНО</h2>
           </div>
-
           <div class="flex items-center gap-[70px] mt-[20px]  w-[584px] max-w-full h-[26px] p-[4px]">
             <h1>Страна производителя</h1>
-            <h2>Россия</h2>
+            <h2 class= "font-bold">Россия</h2>
           </div>
-
-          <div class="flex items-center gap-[175px] mt-[20px] w-[584px] max-w-full h-[26px] p-[4px] bg-[#F3F2F1]">
+          <div class="flex items-center gap-[175px] mt-[20px] max-w-[584px] w-full  max-[500px]:w-[500px] h-[26px] p-[4px] bg-[#F3F2F1]">
             <h1>Упаковка</h1>
-            <h2>180 г</h2>
-         </div>
-
-         </div>
+            <h2 class= "font-bold">180 г</h2>
+          </div>
+      </div>
+          </div>
+        </div>
 
        `
+       
 })
 
 
@@ -103,10 +104,10 @@ let proCard = aksiyaProduct.slice (aksiyaProduct.length - 4, aksiyaProduct.lengt
 
 
 function showProducts (content , data) {
-   content.innerHTML = "";
+   content.innerHTML = " ";
 data.map ((el) => {
    content.innerHTML += `
-   <div class="ProductAksiya  relative w-[100%] max-[600px]:max-w-[350px]  h-[475px]  mt-[20px]  mb-3 rounded-[4px] bg-[white]  transition-transform duration-500 hover:scale-105 shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75]">
+   <div class="ProductAksiya  relative w-[100%] max-[600px]:max-w-[350px]  h-[475px]   mt-[20px]  mb-3 rounded-[4px] bg-[white]  transition-transform duration-500 hover:scale-105 shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75]">
    ${
       like.find((item) => item.id === el.id) ?  `
       <img 
