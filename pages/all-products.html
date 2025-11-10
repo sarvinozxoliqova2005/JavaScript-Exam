@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>   
+</head>
+<body class="overflow-x-hidden w-full bg-[#FBF8EC]">
+
+    <header class=" shadow-[2px_4px_8px_0px_#0000001A] z-2 fixed w-full bg-white">
+        <div class="container relative z-2 bg-[white] mx-auto px-3 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-5 md:gap-2 flex-1">
+              <a href="../index.html" class="flex items-center gap-2">
+                <img src="../images/logo.png" alt="logo" class="w-full w-8 h-8 md:w-10 md:h-10">
+                <p class="hidden lg:block font-bold uppercase text-sm lg:text-base">Северяночка</p>
+              </a>
+          
+              <!-- <a href="/pages/category.html" class="hidden md:flex items-center gap-1 md:gap-2 bg-[#70C05B] px-3 md:px-5 py-4 md:py-4 rounded-md">
+                <img id="toggle"  src="https://cdn0.iconfinder.com/data/icons/user-interface-151/24/List_menu_toggle-512.png" alt="menu" class="w-full w-5 h-5 cursor-pointer">
+                <p class="hidden lg:block text-white text-xs lg:text-sm font-medium">Каталог</p>
+              </a>
+           -->
+
+           <div class=" hidden md:flex items-center gap-1 md:gap-2 max-w-[140px] w-full h-[40px]  gap-[5px] bg-[green] px-3 md:px-5 py-4 md:py-4 rounded-md">
+            <button id="toggle" class="w-[40px] h-[40px]  text-white font-bold rotate-[90deg] flex items-center justify-center cursor-pointer">|||</button>
+            <a href="../pages/categories.html" class="text-[white] text-[20px] font-bold">Каталог</a>
+           </div>
+
+             <div class="p-[10px] flex items-center  rounded-md max-w-[900px] w-full md:max-w-[400px] lg:max-w-[340px] xl:max-w-[560px] top-0 z-1">
+                <di class="max-w-[700px] relative w-full border-[#70C05B]  border-[2px] rounded-[10px] outline-none">
+                    <input id="searchInput" class="w-full h-full p-[20px] outline-none text-[#8F8F8F]" type="Mahsulotlarni qidirish" placeholder="Найти товар">
+                    <div id="searchCards" class="w-full hidden overflow-y-scroll flex flex-col gap-[10px] top-[80px] absolute max-h-[300px] bg-[white] shadow-lg rounded-[20px] p-[20px]">
+                    </div>
+                </div>
+
+            </div>
+
+    
+          
+           <div  class="hidden md:flex items-center gap-3 md:gap-5 text-[10px] sm:text-xs md:text-sm ml-3">
+              <a  href="../pages/all-products.html" class="flex flex-col items-center relative">
+                <img src="https://www.freeiconspng.com/uploads/like-outline-icon-png-22.png" alt="favorites" class="w-full w-5 h-5 md:w-6 md:h-6">
+                <p > Избранное </p> <span id="like-badge" class="w-[20px] h-[20px] rounded-[50%] absolute top-[-12px] left-14 p-[4px] flex items-center justify-center text-white text-[16px] font-bold bg-[green]">0</span> 
+              </a>
+          
+              <a href="../pages/vseproduct.html" class="flex flex-col items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/814/814987.png" alt="orders" class="w-full w-5 h-5 md:w-6 md:h-6">
+                <p>Заказы</p>
+              </a>
+          
+              
+                <a href="../pages/korzina.html" class="flex flex-col items-center relative">
+                <img src="https://cdn-icons-png.flaticon.com/512/481/481384.png" alt="basket" class= "w-full w-5 h-5 md:w-6 md:h-6">
+                Корзина <span id="badge" class="w-[20px] h-[20px] rounded-[50%] p-[4px] flex items-center justify-center absolute top-[-15px] left-12  text-white text-[16px] font-bold bg-[red]">0</span>
+              </a>
+              
+          
+              <div id="profile" class="flex items-center gap-2 cursor-pointer">
+                <img id="profile-img" src="../images/avatar.png" alt="Avatar" class="w-full w-6 h-6 md:w-8 md:h-8 rounded-full object-cover">
+                <h1 id="profile-title" class="hidden lg:block bg-transparent border-none text-gray-800 font-medium cursor-pointer">Алексей</h1>
+                     
+                </div>  
+            </div>
+        </div>
+          
+    </header>
+
+     <div id="toggle-category" class="bg-[red] duration-500 rounded-[30px] grid grid-cols-4 gap-[30px] p-[20px] translate-y-[-100%] z-1 left-0 w-full absolute mt-[20px] top-0">
+            <!-- <a href="" class="flex items-center gap-[5px]">
+                <img class="w-[50px] h-[50px] rounded-[50%]" src="./assets/images/categories/bakery.png" alt="">
+                <h1 class="text-[24p] font-bold text-[white]">Nonlar</h1>
+            </a> -->
+    </div> 
+
+    
+  <main>
+
+    <section>
+        <div class="container mx-auto pt-[150px]">
+          <div class="flex items-center gap-[20px]">
+            <a class="px-2" href="../index.html">Главная</a>
+            <img
+              class="w-[10px]"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJUAAACUCAMAAACtIJvYAAAAZlBMVEX///8AAADu7u7x8fHMzMz39/fq6upRUVEgICBNTU2JiYlBQUFEREQWFhba2tqCgoJ6eno1NTV0dHQbGxteXl5WVlYsLCxvb287OzvCwsIMDAxjY2PU1NSmpqZqamqdnZ2zs7OSkpLVOdzkAAACbklEQVR4nO2cXXOCMBBFAwiofFRrpdZibf//n+wwKKKQXPLCXWb2Pvtw5rCJIVlizMTU2+xcHC/J1N/PkfgnaFNd2SiPlFXQ5Z0Nc09yCnr5ZOO0qavgKSJsPZsSYqusXqEE2AqzIRTdVnwcg2Lb+hqHImMNKl3CQwzXVqpgR6MqCzsV7yE6qWi2XE+QaGvvpGLZ+nVTkbCijUisxF1ZLKzaOQxpWOVBJBa09UbBEmprhbBItmSW/ApNECRbZ7U1PSWgImGpLZ+oLZ9AW1sKltryCbQldJbn2Kq1tjyitnyitnyitryw1JYPltrywVJbPlhqywcL2SJhof0ttdXHkmnLerxJtoU2Kf8oWEu1pbXVy1JHIqfkl1pbJFvouEBt9QL/qi8ULGiL00mJbP1QqFAbxJpDBUZiUZKw3LZWHCh3c0ZRU6Ci0R7FLoeQAZWA+T1lQIW5G4pSVonEdQM0lcbzQ8HWqG8C1HiHcC8bhqmRXmo1NRaRpsCMrqa6QFO5mmoDR5+aukWmKfuHDG0+1FQbkaYiBKWmbokRVMYwhQpdZE3JNBXNDyVzlYBesSimJM5T8GX0KNEUY40eom+aGKZi8FWamroHmsoJUGpqapZpasOYPJGplLBpLdNUiqAkmkolmsrVVBuZNQXXUxJNUWoK7g4ToESagu99jNEXI1OZSFOMQrfcc9PlJHH0MUyZHYDaM6BQHw7FlAFLT4opk7hbLTmmwDUWHFOgrEim3LdFVCwoY+wHbDRTxjFdEU3ZL3VimjK2Trg1F8qYizxTTa4DqIKwyBvk1ZYAU02ebR0kmGpykWeqyaPfeZazmX8MRSY9cwBa8QAAAABJRU5ErkJggg=="
+              alt=""
+            />
+            <a href="" class="text-[#8F8F8F] ">Избраное</a>
+          </div>
+
+          <div class="mt-[60px]">
+            <h1 class="text-[64px] font-bold">Избраное</h1>
+          </div>
+        </div>
+      </section>
+
+
+    <section>
+        <div class="container flex items-start gap-[20px] mx-auto px-[20px]">
+    <div class="w-[30%] gap-[20px] flex items-center fixed left-0 mt-[250px] ">
+        <input id="input1" class="border-[#BFBFBF] border-[1px] p-[10px]" type="number" placeholder="0 dan...">
+        <input id="input2" class="border-[#BFBFBF] border-[1px] p-[10px]" type="number" placeholder="gacha">
+    </div>
+    <div class="cards ml-[35%] w-[65%] grid grid-cols-3 mt-[100px] gap-[30px]">
+       
+  </div>
+
+    </section>
+  </main>
+
+   <footer class="py-[90px] bg-[#FBF8EC]">
+    <div class="container mx-auto py-[90px]">
+
+        <div class="flex items-center justify-between max-[1050px]:gap-10 max-[1050px]:flex-col">
+            <img src="../images/logo.png" alt="">
+        
+            <div>
+                <ul class="flex items-center gap-[40px] max-[1050px]:flex-col max-[600px]:text-[16px] max-[400px]:text-[14px] max-[300px]:text-[10px]">
+                <li>
+                    <a href="">О компании</a>
+                </li>
+                <li>
+                    <a href="">Контакты</a>
+                </li>
+                <li>
+                    <a href="">Вакансии</a>
+                </li>
+                <li>
+                    <a href="">Статьи</a>
+                </li>
+                <li>
+                    <a class="max-[300px]:text-center" href="">Политика обработки персональных данных</a>
+                </li>
+            </ul>
+            </div>
+        
+
+    
+            <div>
+                <a class="flex items-center gap-[20px]" href="">
+                <img class="w-[40px] " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-js0W9HFrrqe6IlNrRgyjar4BKW7jIvokfQ&s" alt="">
+                <img class="w-[40px]" src="https://cdn-icons-png.flaticon.com/512/733/733583.png" alt="">
+                <img class="w-[40px]" src="https://cdn-icons-png.freepik.com/256/14047/14047486.png?semt=ais_white_label" alt="">
+                <img class="w-[40px]" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD-juPgT9sYYNeOTWa2dtcy_86xkWwKSG6rA&s" alt="">
+            </a>
+            </div>
+
+            <div>
+                <a class="flex items-center gap-[20px]" href="">
+                <img class="w-[40px]" src="https://st4.depositphotos.com/15317184/27028/v/450/depositphotos_270285308-stock-illustration-phone-and-call-line-icon.jpg" alt="">
+                <h1>8 800 777 33 33</h1>
+            </a>
+            </div>
+        </div>
+    </div>
+    </div>
+ </footer>
+   <script src="../products-data.js"></script>
+   <script src="../js/toggle.js"></script>
+    <script src="../js/filter.js"></script>
+</body>
+</html>

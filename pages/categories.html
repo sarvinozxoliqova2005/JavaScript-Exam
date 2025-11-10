@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="overflow-x-hidden w-full bg-[#FBF8EC]">
+     <header class="shadow-[2px_4px_8px_0px_#0000001A] z-2 fixed w-full bg-white">
+        <nav class="container mx-auto px-3 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-5 md:gap-2 flex-1">
+              <a href="../index.html" class="flex items-center gap-2">
+                <img src="../images/logo.png" alt="logo" class="w-full h-8 md:w-10 md:h-10">
+                <p class="hidden lg:block font-bold uppercase text-sm lg:text-base">Северяночка</p>
+              </a>
+
+
+              <div class=" hidden md:flex items-center gap-1 md:gap-2 max-w-[140px] w-full h-[40px]  gap-[5px] bg-[green] px-3 md:px-5 py-4 md:py-4 rounded-md">
+            <button id="toggle" class="w-[40px] h-[40px] text-white font-bold rotate-[90deg] flex items-center justify-center cursor-pointer">|||</button>
+            <a href="../pages/category.html" class="text-[white] text-[20px] font-bold">Каталог</a>
+           </div>
+
+          
+              <!-- <a href="../pages/category.html" class="hidden md:flex items-center gap-1 md:gap-2 bg-[#70C05B] px-3 md:px-5 py-4 md:py-4 rounded-md">
+                <img id="toggle" src="https://cdn0.iconfinder.com/data/icons/user-interface-151/24/List_menu_toggle-512.png" alt="menu" class="w-full w-5 h-5">
+                <p class="hidden lg:block text-white text-xs lg:text-sm font-medium">Каталог</p>
+              </a> -->
+          
+              <!-- <div class="flex items-center border border-[#70C05B] rounded-md max-w-[500px] md lg:max-w-[340px] w-full xl:max-w-[560px]">
+                <input type="text" placeholder="Найти товар" class="px-4 w-full py-4 text-xs text-md ">
+                <button class="px-3">
+                  <img src="https://static.vecteezy.com/system/resources/thumbnails/009/652/218/small/magnifying-glass-icon-isolated-on-white-background-search-illustration-vector.jpg" alt="search" class=" w-[60px]">
+                </button>
+              </div>
+            </div> -->
+          <div class="p-[10px] flex items-center  rounded-md max-w-[900px] w-full md:max-w-[400px] lg:max-w-[340px] xl:max-w-[560px] top-0 z-1">
+                <di class="max-w-[700px] relative w-full border-[#70C05B]  border-[2px] rounded-[10px] outline-none">
+                    <input id="searchInput" class="w-full h-full p-[20px] outline-none text-[#8F8F8F]" type="Mahsulotlarni qidirish" placeholder="Найти товар">
+                    <div id="searchCards" class="w-full hidden overflow-y-scroll flex flex-col gap-[10px] top-[80px] absolute max-h-[300px] bg-[white] shadow-lg rounded-[20px] p-[20px]">
+                    </div>
+                </div>
+
+            <div class="hidden md:flex items-center gap-3 md:gap-5 text-[10px] sm:text-xs md:text-sm ml-3">
+              <a < href="../pages/izbrannoe.html" class="flex flex-col items-center relative">
+                <img src="https://www.freeiconspng.com/uploads/like-outline-icon-png-22.png" alt="favorites" class="w-full w-5 h-5 md:w-6 md:h-6">
+                <p > Избранное </p> <span id="like-badge" class="w-[20px] h-[20px] rounded-[50%] absolute top-[-12px] left-14 p-[4px] flex items-center justify-center text-white text-[16px] font-bold bg-[green]">0</span> 
+              </a>
+
+              <a href="../pages/vseproduct.html" class="flex flex-col items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/814/814987.png" alt="orders" class="w-full w-5 h-5 md:w-6 md:h-6">
+                <p>Заказы</p>
+              </a>
+          
+              <a href="../pages/korzina.html" class="flex flex-col items-center relative">
+                <img src="https://cdn-icons-png.flaticon.com/512/481/481384.png" alt="basket" class= "w-full w-5 h-5 md:w-6 md:h-6">
+                Корзина <span id="badge" class="w-[20px] h-[20px] rounded-[50%] p-[4px] flex items-center justify-center absolute top-[-15px] left-12  text-white text-[16px] font-bold bg-[red]">0</span>
+              </a>
+              
+          
+              <div class="flex items-center gap-2">
+                <img src="../images/avatar.png" alt="Avatar" class="w-full w-6 h-6 md:w-8 md:h-8 rounded-full object-cover">
+                     
+                <h1 id="Алексей" class="hidden lg:block bg-transparent border-none text-gray-800 font-medium cursor-pointer">
+                </h1>
+                </div>              
+            </div>
+          </nav>
+          
+    </header>
+
+    <div id="toggle-category" class="bg-[red] duration-500 rounded-[30px] grid grid-cols-4 gap-[30px] p-[20px] translate-y-[-100%] z-1 left-0 w-full absolute mt-[20px] top-0">
+            <!-- <a href="" class="flex items-center gap-[5px]">
+                <img class="w-[50px] h-[50px] rounded-[50%]" src="./assets/images/categories/bakery.png" alt="">
+                <h1 class="text-[24p] font-bold text-[white]">Nonlar</h1>
+            </a> -->
+    </div> 
+
+    
+
+
+    <!-- <main>
+        <section>
+        <div class="container mx-auto pt-[120px]">
+          <div class="flex items-center gap-[20px] mt-[30px] ">
+            <a class="text-[#8F8F8F]" href="../index.html">Главная</a>
+            <img class="w-[10px]" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJUAAACUCAMAAACtIJvYAAAAZlBMVEX///8AAADu7u7x8fHMzMz39/fq6upRUVEgICBNTU2JiYlBQUFEREQWFhba2tqCgoJ6eno1NTV0dHQbGxteXl5WVlYsLCxvb287OzvCwsIMDAxjY2PU1NSmpqZqamqdnZ2zs7OSkpLVOdzkAAACbklEQVR4nO2cXXOCMBBFAwiofFRrpdZibf//n+wwKKKQXPLCXWb2Pvtw5rCJIVlizMTU2+xcHC/J1N/PkfgnaFNd2SiPlFXQ5Z0Nc09yCnr5ZOO0qavgKSJsPZsSYqusXqEE2AqzIRTdVnwcg2Lb+hqHImMNKl3CQwzXVqpgR6MqCzsV7yE6qWi2XE+QaGvvpGLZ+nVTkbCijUisxF1ZLKzaOQxpWOVBJBa09UbBEmprhbBItmSW/ApNECRbZ7U1PSWgImGpLZ+oLZ9AW1sKltryCbQldJbn2Kq1tjyitnyitnyitryw1JYPltrywVJbPlhqywcL2SJhof0ttdXHkmnLerxJtoU2Kf8oWEu1pbXVy1JHIqfkl1pbJFvouEBt9QL/qi8ULGiL00mJbP1QqFAbxJpDBUZiUZKw3LZWHCh3c0ZRU6Ci0R7FLoeQAZWA+T1lQIW5G4pSVonEdQM0lcbzQ8HWqG8C1HiHcC8bhqmRXmo1NRaRpsCMrqa6QFO5mmoDR5+aukWmKfuHDG0+1FQbkaYiBKWmbokRVMYwhQpdZE3JNBXNDyVzlYBesSimJM5T8GX0KNEUY40eom+aGKZi8FWamroHmsoJUGpqapZpasOYPJGplLBpLdNUiqAkmkolmsrVVBuZNQXXUxJNUWoK7g4ToESagu99jNEXI1OZSFOMQrfcc9PlJHH0MUyZHYDaM6BQHw7FlAFLT4opk7hbLTmmwDUWHFOgrEim3LdFVCwoY+wHbDRTxjFdEU3ZL3VimjK2Trg1F8qYizxTTa4DqIKwyBvk1ZYAU02ebR0kmGpykWeqyaPfeZazmX8MRSY9cwBa8QAAAABJRU5ErkJggg==" alt="">
+            <a class="text-[#8F8F8F]" href="../pages/category.html">Каталог</a>
+           <img class="w-[10px]" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJUAAACUCAMAAACtIJvYAAAAZlBMVEX///8AAADu7u7x8fHMzMz39/fq6upRUVEgICBNTU2JiYlBQUFEREQWFhba2tqCgoJ6eno1NTV0dHQbGxteXl5WVlYsLCxvb287OzvCwsIMDAxjY2PU1NSmpqZqamqdnZ2zs7OSkpLVOdzkAAACbklEQVR4nO2cXXOCMBBFAwiofFRrpdZibf//n+wwKKKQXPLCXWb2Pvtw5rCJIVlizMTU2+xcHC/J1N/PkfgnaFNd2SiPlFXQ5Z0Nc09yCnr5ZOO0qavgKSJsPZsSYqusXqEE2AqzIRTdVnwcg2Lb+hqHImMNKl3CQwzXVqpgR6MqCzsV7yE6qWi2XE+QaGvvpGLZ+nVTkbCijUisxF1ZLKzaOQxpWOVBJBa09UbBEmprhbBItmSW/ApNECRbZ7U1PSWgImGpLZ+oLZ9AW1sKltryCbQldJbn2Kq1tjyitnyitnyitryw1JYPltrywVJbPlhqywcL2SJhof0ttdXHkmnLerxJtoU2Kf8oWEu1pbXVy1JHIqfkl1pbJFvouEBt9QL/qi8ULGiL00mJbP1QqFAbxJpDBUZiUZKw3LZWHCh3c0ZRU6Ci0R7FLoeQAZWA+T1lQIW5G4pSVonEdQM0lcbzQ8HWqG8C1HiHcC8bhqmRXmo1NRaRpsCMrqa6QFO5mmoDR5+aukWmKfuHDG0+1FQbkaYiBKWmbokRVMYwhQpdZE3JNBXNDyVzlYBesSimJM5T8GX0KNEUY40eom+aGKZi8FWamroHmsoJUGpqapZpasOYPJGplLBpLdNUiqAkmkolmsrVVBuZNQXXUxJNUWoK7g4ToESagu99jNEXI1OZSFOMQrfcc9PlJHH0MUyZHYDaM6BQHw7FlAFLT4opk7hbLTmmwDUWHFOgrEim3LdFVCwoY+wHbDRTxjFdEU3ZL3VimjK2Trg1F8qYizxTTa4DqIKwyBvk1ZYAU02ebR0kmGpykWeqyaPfeZazmX8MRSY9cwBa8QAAAABJRU5ErkJggg==" alt="">
+           <h1 class="text-[#8F8F8F]">Молоко, сыр, яйцо</h1>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- <section> -->
+        <div class="container mx-auto py-[60px]">
+
+          <!-- <div>
+            <h1 class="text-[64px] font-bold font-[rubik]" id="title">Молоко, сыр, яйцо</h1>
+          </div> -->
+          <div id="categories-cards" class="grid md:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 max-w-[100vw] gap-[20px]   px-2 max-[600px]:col-span-2">
+
+            </div>
+      <!-- </section>
+    </main> -->
+
+   
+
+
+    <script src="../js/category-data.js"></script>
+    <script src="../js/categories.js"></script>
+    <script src="../js/search.js"></script>
+</body>
+</html>

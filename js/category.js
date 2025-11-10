@@ -1,71 +1,30 @@
-let cardlar = document.querySelector (".cardlar");
+let path = new URLSearchParams (location.search);
+let categoryCards = document.getElementById ("categories-cards");
+let like = JSON.parse (localStorage.getItem ("likes") || "[]");
+let likeBadge = document.getElementById ("like-badge");
+localStorage.setItem ("likes" , JSON.stringify(like));
+likeBadge.textContent = like.length;
+
 
 let cart = JSON.parse (localStorage.getItem ("carts") || "[]");
 let badge = document.getElementById ("badge");
 localStorage.setItem ("carts" , JSON.stringify(cart))
 badge.textContent = cart.length;
+let title = document.getElementById ("title");
 
+let categoryName = path.get("categoryName");
+console.log(categoryName);
 
+title.textContent = categoryName
 
-let profileImg = document.getElementById ("profile-img");
-let profileTitle = document.getElementById ("profile-title");
-let profileObj = JSON.parse (localStorage.getItem ("profile") || "{}");
-profileImg.src = profileObj.PhotoUrl;
-profileTitle.textContent = profileObj.FirstName;
-let form = document.getElementById ("form");
-let innerModal = document.getElementById ("inner-modal");
-let formModal = document.getElementById ("form-modal");
-let profile = document.getElementById ("profile");
-profile.addEventListener ("click" , function() {
-   formModal.classList.remove ("hidden")
-})
-formModal.addEventListener ("click" , function(){
-   formModal.classList.add ("hidden")
-})
-innerModal.addEventListener ("click" , function (e) {
-   e.stopPropagation();
-})
-form.addEventListener ("submit" , function(e) {
-   e.preventDefault();
-   profileObj.PhotoUrl = e.terget[0].value;
-   profileObj.FirstName = e.terget[1].value;
-   profileObj.LastName = e.target[2].value;
-   profileObj.PhoneNumber = e.target[3].value
-   profileObj.password = e.terget[4].value;
-   profileImg.src = e.terget[0].value;
-   profileTitle.textContent = e.terget[1].value;
-   localStorage.setItem ("profile" , JSON.stringify (profileObj));
-   formModal.classList.add ("hidden");
-})
-   
+let filteredCategories = products.filter((el) => el.category === categoryName);
 
-
-
-
-let likeBadge = document.getElementById ("like-badge");
-let like = JSON.parse (localStorage.getItem ("likes") || "[]");
-localStorage.setItem ("likes" , JSON.stringify(like));
-likeBadge.textContent = like.length;
-
-let sliceProducts = products.slice (products.length - 4 , products.length);
-
-
-let NewProducts = document.querySelector (".NewProducts");
-let NewsliceProduct = products.slice(products.length-4 , products.length);
-
-
-let newpromise = document.querySelector (".RecentlyPurchasedProducts");
-let NewsliceProducts = products.slice(products.length-4 , products.length);
-
-
-let aksiyaProduct = products.filter ((el) => el.discount > 0);
-let proCard = aksiyaProduct.slice (aksiyaProduct.length - 4, aksiyaProduct.length);
-
-
-function showProducts (content , data) {
-   content.innerHTML = "";
-data.map ((el) => {
-   content.innerHTML += `
+function showCategories(content , data) {
+    content.innerHTML = " ";
+    data.map((el) => { 
+        content.innerHTML +=   
+         
+ `
    <div class="ProductAksiya  relative w-full overflow-y-hiddden max-w-[450px] h-[475px]  mt-[20px] mb-3 rounded-[4px] bg-[white]  transition-transform duration-500 hover:scale-105 shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75]">
    ${
       like.find((item) => item.id === el.id) ?  `
@@ -117,26 +76,12 @@ data.map ((el) => {
                         }
                               
                 </div>`
-});
+        
 
+    })
 }
 
-showProducts (cardlar , proCard);
-showProducts (NewProducts , NewsliceProduct);
-showProducts (newpromise , NewsliceProducts);
-
-
-
-
-
-
-
-// let loading = document.getElementById("loading")
-// window.addEventListener ("load" , function() {
-//     loading.classList.add ("hidden")
-// })
-
-
+showCategories(categoryCards , filteredCategories);
 
 
 function addToCart (id) {
@@ -145,9 +90,7 @@ function addToCart (id) {
    cart.push (item);
    badge.textContent = cart.length;
    localStorage.setItem ("carts" , JSON.stringify(cart)) ;
-   showProducts (cardlar , proCard);
-showProducts (NewProducts , NewsliceProduct);
-showProducts (newpromise , NewsliceProducts);
+   showCategories(categoryCards , filteredCategories);
 }
 
 
@@ -160,9 +103,7 @@ function increase (id) {
       return item;
    } );
    localStorage.setItem ("carts" , JSON.stringify(cart)) ;
-   showProducts (cardlar , proCard);
-showProducts (NewProducts , NewsliceProduct);
-showProducts (newpromise , NewsliceProducts);
+   showCategories(categoryCards , filteredCategories);
 }
 
 
@@ -183,9 +124,7 @@ function decrease (id) {
    }
 
    localStorage.setItem ("carts" , JSON.stringify(cart)) ;
-   showProducts (cardlar , proCard);
-showProducts (NewProducts , NewsliceProduct)
-showProducts (newpromise , NewsliceProducts)
+   showCategories(categoryCards , filteredCategories);
 }
 
 
@@ -195,9 +134,7 @@ function addToLike (id) {
    like.push(likeItem);
    likeBadge.textContent = like.length;
    localStorage.setItem ("likes" , JSON.stringify(like));
-   showProducts (cardlar , proCard);
-showProducts (NewProducts , NewsliceProduct);
-showProducts (newpromise , NewsliceProducts);
+   showCategories(categoryCards , filteredCategories);
 }
 
 
@@ -205,8 +142,25 @@ function removeToLike (id) {
    like = like.filter((el) => el.id !== id);
    likeBadge.textContent = like.length;
    localStorage.setItem ("likes" , JSON.stringify(like));
-   showProducts (cardlar , proCard);
-showProducts (NewProducts , NewsliceProduct);
-showProducts (newpromise , NewsliceProducts);
+   showCategories(categoryCards , filteredCategories);
 }
+
+
+let toggle = document.getElementById ("toggle");
+let toggleCategories = document.getElementById ("toggle-category");
+
+
+
+categoriesData.map((el) => {
+    toggleCategories.innerHTML += `
+        <a href="../pages/category.html?categoryName=${el.name} " class="flex items-center gap-[5px]">
+                <img class="w-[50px] h-[50px] rounded-[50%]" src="${el.imageUrl}" alt="">
+                <h1 class="text-[24p] font-bold text-[white]">${el.name}</h1>
+            </a>
+    `
+})
+
+toggle.addEventListener("click" , function(){
+    toggleCategories.classList.toggle("translate-y-[100px]")
+})
 

@@ -27,12 +27,12 @@ badge.textContent = cart.length;
     data.map ((el) => {
         content.innerHTML += `
          <div
-                class="bg-white w-full rounded-lg p-2 gap-3 max-[700px]:gap-5 shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75] mb-2 flex justify-between max-[700px]:flex-col px-5 items-center max-w-[876px] transition-transform duration-500 hover:scale-105"
+                class="bg-white w-full rounded-lg p-2 gap-3 max-[700px]:gap-5 shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75] mb-2 flex justify-between max-[700px]:flex-col px-5 items-center max-w-[876px] transition-transform duration-500 "
               >
                 <div class="flex gap-8 items-center w-full">
                   <div class="relative">
                     <img
-                      class="rounded-lg object-cover w-[80px] h-[60px]"
+                      class="rounded-lg object-cover max-w-[80px] w-full max-[300px]:max-w-[60px] h-[60px] max-[300px]:h-[50px]"
                       src="${el.images[0]}"
                       alt=""
                     />
@@ -48,12 +48,12 @@ badge.textContent = cart.length;
                   <h2 class="font-semibold sm:text-sm md:text-md lg:text-lg text-[pink] font-bold">
                       ${el.name}
                     </h2>
-                    <h2 class="font-semibold sm:text-sm md:text-md lg:text-lg">
+                    <h2 class="font-semibold  max-[300px]:text-[10px] max-[500px]:text-[14px]">
                       ${el.description}
                     </h2>
                                       <a class="flex items-center gap-[20px]" href="">
-                    <p class="font-bold text-sm">${el.price} ₽</p>
-                    <p class=" font-bold">${el.discount} ₽</p>
+                    <p class="font-bold text-sm max-[300px]:text-[14px] ">${el.price} ₽</p>
+                    <p class=" font-bold max-[300px]:text-[14px">${el.discount} ₽</p>
                   </a>
                   </div>
                 </div>

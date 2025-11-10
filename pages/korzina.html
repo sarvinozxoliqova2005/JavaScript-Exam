@@ -6,7 +6,7 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="bg-[#FBF8EC]">
+  <body class="bg-[#FBF8EC] overflow-x-hidden w-full">
     
 
       <header
@@ -58,9 +58,9 @@
           class="hidden md:flex items-center gap-3 md:gap-5 text-[10px] sm:text-xs md:text-sm ml-3"
         >
 
-          <a < href="../pages/izbrannoe.html" class="flex flex-col items-center relative">
+          <a  href="../pages/all-products.html" class="flex flex-col items-center relative">
                 <img src="https://www.freeiconspng.com/uploads/like-outline-icon-png-22.png" alt="favorites" class="w-full w-5 h-5 md:w-6 md:h-6">
-                <p > Избранное </p> <span id="like-badge" class="w-[20px] h-[20px] rounded-[50%] absolute top-[-13px] left-1 p-[4px] flex items-center justify-center text-white text-[16px] font-bold bg-[green]">0</span> 
+                <p > Избранное </p> <span id="like-badge" class="w-[20px] h-[20px] rounded-[50%] absolute top-[-13px] left-12 p-[4px] flex items-center justify-center text-white text-[16px] font-bold bg-[green]">0</span> 
               </a>
 
           <a href="../pages/vseproduct.html" class="flex flex-col items-center">
@@ -102,17 +102,17 @@
     </header>
 
 
-        <main class="bg-[#FBF8EC]">
+        <main class="bg-[#FBF8EC] overflow-x-hidden max-w-[100vw]">
       <section>
         <div class="container mx-auto pt-[150px]">
           <div class="flex items-center gap-[20px]">
-            <a href="../index.html">Главная</a>
+            <a class="px-2" href="../index.html">Главная</a>
             <img
               class="w-[10px]"
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJUAAACUCAMAAACtIJvYAAAAZlBMVEX///8AAADu7u7x8fHMzMz39/fq6upRUVEgICBNTU2JiYlBQUFEREQWFhba2tqCgoJ6eno1NTV0dHQbGxteXl5WVlYsLCxvb287OzvCwsIMDAxjY2PU1NSmpqZqamqdnZ2zs7OSkpLVOdzkAAACbklEQVR4nO2cXXOCMBBFAwiofFRrpdZibf//n+wwKKKQXPLCXWb2Pvtw5rCJIVlizMTU2+xcHC/J1N/PkfgnaFNd2SiPlFXQ5Z0Nc09yCnr5ZOO0qavgKSJsPZsSYqusXqEE2AqzIRTdVnwcg2Lb+hqHImMNKl3CQwzXVqpgR6MqCzsV7yE6qWi2XE+QaGvvpGLZ+nVTkbCijUisxF1ZLKzaOQxpWOVBJBa09UbBEmprhbBItmSW/ApNECRbZ7U1PSWgImGpLZ+oLZ9AW1sKltryCbQldJbn2Kq1tjyitnyitnyitryw1JYPltrywVJbPlhqywcL2SJhof0ttdXHkmnLerxJtoU2Kf8oWEu1pbXVy1JHIqfkl1pbJFvouEBt9QL/qi8ULGiL00mJbP1QqFAbxJpDBUZiUZKw3LZWHCh3c0ZRU6Ci0R7FLoeQAZWA+T1lQIW5G4pSVonEdQM0lcbzQ8HWqG8C1HiHcC8bhqmRXmo1NRaRpsCMrqa6QFO5mmoDR5+aukWmKfuHDG0+1FQbkaYiBKWmbokRVMYwhQpdZE3JNBXNDyVzlYBesSimJM5T8GX0KNEUY40eom+aGKZi8FWamroHmsoJUGpqapZpasOYPJGplLBpLdNUiqAkmkolmsrVVBuZNQXXUxJNUWoK7g4ToESagu99jNEXI1OZSFOMQrfcc9PlJHH0MUyZHYDaM6BQHw7FlAFLT4opk7hbLTmmwDUWHFOgrEim3LdFVCwoY+wHbDRTxjFdEU3ZL3VimjK2Trg1F8qYizxTTa4DqIKwyBvk1ZYAU02ebR0kmGpykWeqyaPfeZazmX8MRSY9cwBa8QAAAABJRU5ErkJggg=="
               alt=""
             />
-            <h1 class="text-[#8F8F8F]">Корзина</h1>
+            <h1 class="text-[#8F8F8F] ">Корзина</h1>
           </div>
         </div>
       </section>
@@ -121,24 +121,24 @@
         <div class="container mx-auto py-[90px]">
           <div class="grid md:grid-cols-1">
             <div>
-              <h1 class="font-bold text-[64px] text-[#414141]">Корзина</h1>
+              <h1 class="font-bold text-[64px] max-[768px]:text-[60px] max-[600px]:text-[50px] max-[300px]:text-[40px] px-4 text-[#414141]">Корзина</h1>
             </div>
 
             <div class="flex items-center gap-[90px] pt-[120px]">
               <label
                 class="gap-[20px] cursor-pointer select-none flex items-center"
               >
-                <input id = all-input type="checkbox" class="w-[30px] h-[24px] bg-[#70C05B] cursor-pointer" />
-                <label for = "all-input" class=" font-bold cursor-pointer">Выделить всё</label>
+                <input id = all-input type="checkbox" class="w-[30px] h-[24px] bg-[#70C05B] cursor-pointer pl-2" />
+                <label for = "all-input" class=" font-bold cursor-pointer max-[600px]:text-[16px] max-[300px]:text-[10px] ">Выделить всё</label>
               </label>
-              <h1 id="checked-all" class="text-[#FF6633] font-bold cursor-pointer">Удалить выбранные</h1>
+              <h1 id="checked-all" class="text-[#FF6633] font-bold cursor-pointer  max-[600px]:text-[16px] max-[300px]:text-[10px] pr-15">Удалить выбранные</h1>
             </div>
           </div>
 
           <div
-            class="flex justify-between  max-[700px]:flex-col pt-[90px] w-full px-3 sm:px-4 py-4 gap-[30px]"
+            class="flex justify-between  max-[700px]:flex-col pt-[90px] w-full px-3 sm:px-4 py-4 gap-[30px] "
           >
-            <div class="cart-cards w-[65%] max-[700px]:w-full flex flex-col gap-5">
+            <div class="cart-cards w-[65%] max-[700px]:w-full flex flex-col gap-5 overflow-x-hidden">
               <!-- card1 -->
         
                 <!-- <div class="bg-white w-full rounded-lg p-2 max-[700px]:gap-5 shadow-lg shadow-[#4a4a4a42] hover:shadow-[#eab84c75] mb-2 flex justify-between max-[700px]:flex-col px-5 items-center max-w-[876px] transition-transform duration-500 hover:scale-105"
@@ -343,32 +343,32 @@
 
             <!-- Right   -->
 
-            <div id="all-prices" class="w-[30%] max-[700px]:w-[100%]">
-              <div>
+            <div id="all-prices" class="w-[30%] max-[700px]:w-[100%] ">
+              <div >
                 <a class="flex items-center" href="">
                   <input class="w-[90px] h-[30px]" type="checkbox" />
-                  <h1 class="text-[#414141]">Списать 200 ₽</h1>
+                  <h1 class="text-[#414141] px-2 max-[350px]:items-center]">Списать 200 ₽</h1>
                 </a>
-                <p class="text-[#8F8F8F] mt-[30px]">На карте накоплено 200 ₽</p>
+                <p class="text-[#8F8F8F] mt-[30px] px-2">На карте накоплено 200 ₽</p>
               </div>
 
 
                             <div class="mx-auto">
                 <div class="flex items-center gap-[130px]  mb-3 mt-[90px]">
-                  <span class="text-[#8F8F8F] font-semibold">товара:</span>
-                  <span id="all-price" class="font-semibold">258,10 ₽</span>
+                  <span class="text-[#8F8F8F] font-semibold px-2">товара:</span>
+                  <span id="all-price" class="font-semibold px-2">258,10 ₽</span>
                   
                 </div>
 
                 <div class="flex items-center gap-[125px] mt-[20px]">
-                  <span class="text-[#8F8F8F]">Скидка</span>
-                  <span id="all-discount" class="text-[#FF6633] font-bold text-[20px]"
+                  <span class="text-[#8F8F8F] px-2">Скидка</span>
+                  <span id="all-discount" class="text-[#FF6633] font-bold text-[20px] px-2"
                     >-8,01 ₽
                   </span>
                 </div>
 
                 <div class="flex items-center gap-[150px] mt-[50px]">
-                  <span class="text-[#8F8F8F]">Итог</span>
+                  <span class="text-[#8F8F8F] px-1">Итог</span>
                   <span id="all-paid" class="text-[24px] text-[#414141] font-bold"
                     >250,09 ₽
                   </span>
@@ -376,12 +376,12 @@
               </div>
 
               <p
-                class="w-[290px] h-[24px] rounded-[4px] bg-[#D80000] text-[white] text-center cursor-pointer mt-[90px] transition-transform duration-500 hover:scale-110"
+                class="max-w-[290px] w-full h-[24px] rounded-[4px] bg-[#D80000] text-[white] text-center cursor-pointer mt-[90px] transition-transform duration-500 hover:scale-110 px-2"
               >
                 Минимальная сумма заказа 1000р
               </p>
               <button
-                class="w-[272px] h-[60px] bg-[#FCD5BA] cursor-pointer text-[24px] font-[400] text-[#FF6633] font-rubik mt-[60px] transition-transform duration-500 hover:scale-110"
+                class="max-w-[272px] w-full h-[60px] bg-[#FCD5BA] px-2 cursor-pointer text-[24px] font-[400] text-[#FF6633] font-rubik mt-[60px] transition-transform duration-500 hover:scale-110"
               >
                 Оформить заказ
               </button>
@@ -398,7 +398,7 @@
             <img src="../images/logo.png" alt="">
         
             <div>
-                <ul class="flex items-center gap-[40px] max-[1050px]:flex-col">
+                <ul class="flex items-center gap-[40px] max-[1050px]:flex-col max-[300px]:text-[12px] max-[600px]:text-[16px]">
                 <li>
                     <a href="">О компании</a>
                 </li>
